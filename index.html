@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cirpman Homes Limited | Certified Properties in Abuja</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script>
+tailwind.config = { theme: { extend: { colors: {
+  brandNavy:'#0A2540', brandBlue:'#004B87', brandYellow:'#FFC72C', brandGray:'#F4F6F8'
+}}}}
+</script>
+<style>
+  .hide{display:none!important}
+  .tabbtn.active{background:#004B87;color:#fff}
+  input,select,textarea{font-size:14px}
+  @media print{ .noprint{display:none!important} }
+</style>
+</head>
+<body class="bg-brandGray text-gray-800 antialiased">
+
+<!-- ================= PUBLIC SITE ================= -->
+<header class="bg-brandNavy text-white sticky top-0 z-40 shadow-md noprint">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-brandYellow flex items-center justify-center font-bold text-brandNavy text-xl">C</div>
+      <div>
+        <h1 class="text-lg font-bold tracking-[0.15em] leading-none">CIRPMAN</h1>
+        <span class="text-[10px] text-brandYellow tracking-[0.2em] font-semibold">HOMES LIMITED</span>
+      </div>
+    </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium">
+      <a href="#estates" class="hover:text-brandYellow">Estates</a>
+      <a href="#gallery" class="hover:text-brandYellow">Gallery</a>
+      <a href="#about" class="hover:text-brandYellow">About</a>
+      <a href="#consultants" class="hover:text-brandYellow">Consultants</a>
+      <a href="#subscribe" class="hover:text-brandYellow">Subscribe</a>
+      <a href="#faqs" class="hover:text-brandYellow">FAQs</a>
+      <a href="#contact" class="hover:text-brandYellow">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button onclick="showConsultant()" class="bg-brandYellow/90 hover:bg-brandYellow text-brandNavy text-sm font-bold px-4 py-2 rounded">
+        <i class="fa-solid fa-user-tie mr-1"></i>Consultant Login
+      </button>
+      <button onclick="showAdmin()" class="bg-white/10 border border-white/30 hover:bg-white/20 text-white text-sm font-bold px-4 py-2 rounded">
+        <i class="fa-solid fa-lock mr-1"></i>Admin
+      </button>
+      <a href="#subscribe" class="bg-brandYellow text-brandNavy text-sm font-bold px-4 py-2 rounded hover:bg-yellow-400">Subscribe</a>
+    </div>
+  </div>
+</header>
+
+<section class="bg-gradient-to-r from-brandNavy to-brandBlue text-white py-14 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <span class="bg-brandYellow text-brandNavy px-3 py-1 text-[11px] font-bold rounded-full tracking-wider">RC: 7114480</span>
+    <h2 class="text-3xl md:text-5xl font-black mt-4 mb-4 leading-tight">Affordable, Certified Properties in Gwagwalada, Abuja</h2>
+    <p class="text-base md:text-lg text-gray-200 max-w-2xl mx-auto">
+      Legally verified land with <span class="text-brandYellow font-semibold">Pay Small Small</span> installments.
+      All titles C of O.
+    </p>
+    <div class="mt-7 flex flex-col sm:flex-row justify-center gap-3">
+      <a href="#estates" class="bg-brandYellow text-brandNavy font-bold px-7 py-3 rounded-lg hover:bg-yellow-400">View Estates</a>
+      <a href="#subscribe" class="bg-white/10 border border-white/30 font-bold px-7 py-3 rounded-lg hover:bg-white/20">Subscribe Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ESTATES -->
+<section id="estates" class="py-14 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-2xl font-extrabold text-brandNavy text-center">Our Certified Estates</h3>
+    <p class="text-center text-gray-600 mt-1 mb-8 text-sm">Every plot comes with a verified Certificate of Occupancy.</p>
+    <div id="estateGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-14 px-4 bg-white border-y border-gray-200">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-2xl font-extrabold text-brandNavy text-center">Media Gallery</h3>
+    <p class="text-center text-gray-600 mt-1 mb-8 text-sm">Site progress and development imagery.</p>
+    <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    <p id="galleryEmpty" class="text-center text-gray-400 text-sm hide">No gallery items yet.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-14 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h3 class="text-2xl font-extrabold text-brandNavy text-center mb-5">About Us</h3>
+    <div id="aboutBody" class="text-sm text-gray-700 leading-relaxed space-y-3"></div>
+  </div>
+</section>
+
+<!-- CONSULTANTS -->
+<section id="consultants" class="py-14 px-4 bg-white border-y border-gray-200">
+  <div class="max-w-3xl mx-auto text-center">
+    <h3 class="text-2xl font-extrabold text-brandNavy">Become a Cirpman Consultant</h3>
+    <p class="text-sm text-gray-600 mt-2 mb-6">
+      Register as an independent consultant, receive your official Consultant ID, submit your sales online
+      and track every commission from your personal dashboard.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-3">
+      <button onclick="showConsultant('register')" class="bg-brandBlue hover:bg-brandNavy text-white font-bold px-7 py-3 rounded-lg">Register as Consultant</button>
+      <button onclick="showConsultant('login')" class="bg-brandYellow hover:bg-yellow-400 text-brandNavy font-bold px-7 py-3 rounded-lg">Consultant Login</button>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section id="subscribe" class="py-14 px-4 bg-brandNavy">
+  <div class="max-w-3xl mx-auto">
+    <h3 class="text-2xl font-extrabold text-white text-center">Client Subscription</h3>
+    <p class="text-center text-gray-300 mt-1 mb-7 text-sm">Your account is created automatically once you submit.</p>
+
+    <div id="subSuccess" class="hide bg-green-50 border-l-4 border-green-600 p-4 rounded mb-5 text-sm">
+      <p class="font-bold text-green-800">Subscription submitted successfully.</p>
+      <div id="subSuccessBody" class="text-green-700 mt-1"></div>
+    </div>
+
+    <form id="subForm" onsubmit="return submitSubscription(event)" class="bg-white rounded-xl p-6 space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Account Type *</label>
+          <select id="subAccountType" required onchange="refreshEstateOptions()" class="w-full p-2.5 border rounded bg-white">
+            <option value="">Select account type...</option>
+            <option value="Normal Estate">Normal Estate — Peace, Treasure, Brooklyn, Royal</option>
+            <option value="Easy Buy">Easy Buy — Emerald Park</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Estate *</label>
+          <select id="subEstate" required onchange="refreshPlotOptions()" class="w-full p-2.5 border rounded bg-white">
+            <option value="">Select account type first</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Plot Size *</label>
+          <select id="subPlot" required onchange="refreshPricePreview()" class="w-full p-2.5 border rounded bg-white">
+            <option value="">Select estate first</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Payment Plan *</label>
+          <select id="subPlan" required onchange="refreshPricePreview()" class="w-full p-2.5 border rounded bg-white">
+            <option value="outright">Outright</option>
+            <option value="m6">0 – 6 months</option>
+            <option value="m12">0 – 12 months</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="bg-brandGray rounded-lg p-4 flex items-center justify-between">
+        <span class="text-sm font-semibold text-gray-600">Amount payable</span>
+        <span id="subPrice" class="text-xl font-extrabold text-brandBlue">₦0</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Full Name *</label>
+          <input id="subName" required class="w-full p-2.5 border rounded"></div>
+        <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Phone *</label>
+          <input id="subPhone" required placeholder="0806 915 5264" class="w-full p-2.5 border rounded"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Email *</label>
+          <input id="subEmail" type="email" required class="w-full p-2.5 border rounded"></div>
+        <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Referral Code (optional)</label>
+          <input id="subRef" placeholder="Consultant referral code" class="w-full p-2.5 border rounded"></div>
+      </div>
+
+      <div>
+        <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Payment Method *</label>
+        <select id="subMethod" required class="w-full p-2.5 border rounded bg-white">
+          <option value="paystack">Pay Online (card / transfer)</option>
+          <option value="bank">Bank transfer — UBA 1026575590</option>
+        </select>
+      </div>
+
+      <p class="text-[11px] text-gray-500 leading-relaxed">
+        By subscribing you confirm the information provided is true. Account details are issued immediately after submission.
+      </p>
+
+      <button type="submit" class="w-full bg-brandBlue hover:bg-brandNavy text-white font-bold py-3 rounded-lg">
+        Submit Subscription
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faqs" class="py-14 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h3 class="text-2xl font-extrabold text-brandNavy text-center mb-6">Frequently Asked Questions</h3>
+    <div id="faqList" class="space-y-3"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact" class="bg-brandNavy text-white pt-12 pb-7 px-4 border-t-4 border-brandYellow">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <h5 class="text-sm font-bold text-brandYellow uppercase tracking-wide mb-3">Head Office</h5>
+      <p id="contactAddress" class="text-sm text-gray-300 leading-relaxed"></p>
+      <p id="contactEmail" class="text-sm text-gray-300 mt-2"></p>
+      <p id="contactWebsite" class="text-sm text-gray-300 mt-1"></p>
+    </div>
+    <div>
+      <h5 class="text-sm font-bold text-brandYellow uppercase tracking-wide mb-3">Branches</h5>
+      <ul id="contactBranches" class="text-sm text-gray-300 space-y-2"></ul>
+    </div>
+    <div>
+      <h5 class="text-sm font-bold text-brandYellow uppercase tracking-wide mb-3">Hotlines</h5>
+      <div id="contactPhones" class="space-y-1"></div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto border-t border-white/10 mt-8 pt-5 text-center text-[11px] text-gray-400">
+    &copy; 2026 Cirpman Homes Limited. RC: 7114480 · TIN: 31532163-0001
+  </div>
+</footer>
+
+<!-- ================= ADMIN ================= -->
+<div id="adminOverlay" class="hide fixed inset-0 z-[100] bg-gray-100 overflow-y-auto">
+
+  <!-- LOGIN -->
+  <div id="adminLogin" class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-7 rounded-xl shadow max-w-sm w-full">
+      <div class="text-center mb-5">
+        <div class="w-14 h-14 rounded-full bg-brandYellow flex items-center justify-center font-bold text-brandNavy text-2xl mx-auto mb-2">C</div>
+        <h2 class="font-bold text-brandNavy">Cirpman Admin</h2>
+        <p class="text-[12px] text-gray-500">Management Dashboard</p>
+      </div>
+      <div id="loginErr" class="hide bg-red-50 border border-red-200 text-red-700 text-[12px] p-2.5 rounded mb-3"></div>
+      <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Password</label>
+      <input id="adminPass" type="password" onkeydown="if(event.key==='Enter')doLogin()" class="w-full p-2.5 border rounded mb-3" placeholder="Enter password">
+      <button onclick="doLogin()" class="w-full bg-brandBlue text-white font-bold py-2.5 rounded">Login</button>
+      <button onclick="hideAdmin()" class="w-full mt-3 text-[12px] text-gray-500 hover:text-brandBlue">← Back to website</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="adminDash" class="hide min-h-screen bg-gray-100">
+    <header class="bg-brandNavy text-white sticky top-0 z-10">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-full bg-brandYellow flex items-center justify-center font-bold text-brandNavy">C</div>
+          <div>
+            <p class="text-sm font-bold leading-none">CIRPMAN HOMES</p>
+            <p class="text-[10px] text-brandYellow">Admin Dashboard</p>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="hideAdmin()" class="text-[12px] bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded font-bold">Website</button>
+          <button onclick="doLogout()" class="text-[12px] bg-red-500 hover:bg-red-600 px-3 py-1.5 rounded font-bold">Logout</button>
+        </div>
+      </div>
+      <div class="bg-white border-t overflow-x-auto">
+        <div class="max-w-6xl mx-auto px-2 flex gap-1 text-[12px] whitespace-nowrap">
+          <button class="tabbtn active px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('overview')">Overview</button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('estates')">Estates</button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('gallery')">Gallery</button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('content')">Content</button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('clients')">Clients</button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('payments')">Payments</button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('commissions')">Commissions</button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('consultants')">Consultants <span id="badgeCons" class="hide bg-red-500 text-white text-[10px] px-1.5 rounded-full ml-1"></span></button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('sales')">Sales Receipts <span id="badgeSales" class="hide bg-red-500 text-white text-[10px] px-1.5 rounded-full ml-1"></span></button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('staff')">Staff</button>
+          <button class="tabbtn px-3 py-2.5 rounded-t font-bold text-gray-600" onclick="switchTab('settings')">Settings</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 pb-16">
+
+      <!-- OVERVIEW -->
+      <section id="tab-overview">
+        <div id="statCards" class="grid grid-cols-2 md:grid-cols-4 gap-3"></div>
+        <div class="bg-white rounded-xl p-4 mt-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-3">Recent Subscriptions</h3>
+          <div id="recentClients" class="text-[12px]"></div>
+        </div>
+      </section>
+
+      <!-- ESTATES -->
+      <section id="tab-estates" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-brandNavy text-sm">Estate Listings</h3>
+            <button onclick="openEstateForm()" class="bg-brandBlue text-white text-[12px] font-bold px-3 py-2 rounded">+ Add Estate</button>
+          </div>
+          <div id="estateAdminList" class="space-y-2"></div>
+        </div>
+
+        <div id="estateFormWrap" class="hide bg-white rounded-xl p-4 mt-4">
+          <h3 id="estateFormTitle" class="font-bold text-brandNavy text-sm mb-3">New Estate</h3>
+          <input type="hidden" id="estId">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Estate Name *</label>
+              <input id="estName" class="w-full p-2 border rounded"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Account Type *</label>
+              <select id="estType" class="w-full p-2 border rounded bg-white">
+                <option value="standard">Normal Estate (10% direct)</option>
+                <option value="easybuy">Easy Buy (7% direct)</option>
+              </select></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Location *</label>
+              <input id="estLoc" class="w-full p-2 border rounded"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Title</label>
+              <input id="estTitle" value="C of O" class="w-full p-2 border rounded"></div>
+          </div>
+          <div class="mt-3"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Description</label>
+            <textarea id="estDesc" rows="2" class="w-full p-2 border rounded"></textarea></div>
+          <div class="mt-3"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Image URL</label>
+            <input id="estImg" class="w-full p-2 border rounded" placeholder="https://..."></div>
+
+          <div class="mt-4">
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-[12px] font-bold text-gray-600">Plot sizes & pricing</p>
+              <button onclick="addPlotRow()" class="text-[11px] bg-gray-100 px-2 py-1 rounded font-bold">+ Add plot size</button>
+            </div>
+            <div id="plotRows" class="space-y-2"></div>
+          </div>
+
+          <div class="flex gap-2 mt-4">
+            <button onclick="saveEstate()" class="bg-brandBlue text-white text-[12px] font-bold px-4 py-2 rounded">Save Estate</button>
+            <button onclick="closeEstateForm()" class="bg-gray-100 text-gray-700 text-[12px] font-bold px-4 py-2 rounded">Cancel</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="tab-gallery" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-3">Gallery Manager</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Type</label>
+              <select id="galType" class="w-full p-2 border rounded bg-white">
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+              </select></div>
+            <div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Media URL</label>
+              <input id="galUrl" class="w-full p-2 border rounded" placeholder="https://..."></div>
+          </div>
+          <div class="mt-3"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Caption</label>
+            <input id="galCaption" class="w-full p-2 border rounded" placeholder="e.g. Perimeter wall progress"></div>
+          <div class="flex gap-2 mt-3">
+            <button onclick="addGallery()" class="bg-brandBlue text-white text-[12px] font-bold px-4 py-2 rounded">Add Media</button>
+            <label class="bg-gray-100 text-gray-700 text-[12px] font-bold px-4 py-2 rounded cursor-pointer">
+              Upload from device
+              <input type="file" accept="image/*" class="hidden" onchange="uploadGalleryFile(this)">
+            </label>
+            <label class="bg-brandNavy text-white text-[12px] font-bold px-4 py-2 rounded cursor-pointer hover:bg-brandBlue">
+              <i class="fa-solid fa-folder-open mr-1"></i>Browse Local Files
+              <input id="galBrowse" type="file" multiple class="hidden"
+                     accept="image/jpeg,image/png,image/gif,image/webp,image/avif,video/mp4,video/webm,video/ogg,video/quicktime,.jpg,.jpeg,.png,.gif,.webp,.avif,.mp4,.webm,.ogv,.mov"
+                     onchange="browseGalleryFiles(this)">
+            </label>
+          </div>
+          <p class="text-[11px] text-gray-500 mt-2">Browse Local Files accepts images (JPG, PNG, GIF, WebP, AVIF; max 8 MB each) and videos (MP4, WebM, OGG, MOV; max 30 MB each). Files are uploaded to the server and appear on the public gallery straight away.</p>
+          <div id="galleryAdminList" class="mt-4 space-y-2"></div>
+        </div>
+      </section>
+
+      <!-- CONTENT -->
+      <section id="tab-content" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-3">About Us</h3>
+          <textarea id="cAbout" rows="4" class="w-full p-2 border rounded text-[13px]"></textarea>
+          <button onclick="saveAbout()" class="mt-2 bg-brandBlue text-white text-[12px] font-bold px-4 py-2 rounded">Save About</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 mt-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-3">Contact Information</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Head Office Address</label>
+              <textarea id="cAddress" rows="2" class="w-full p-2 border rounded text-[13px]"></textarea></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Branches (one per line)</label>
+              <textarea id="cBranches" rows="2" class="w-full p-2 border rounded text-[13px]"></textarea></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3">
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Email</label>
+              <input id="cEmail" class="w-full p-2 border rounded text-[13px]"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Website</label>
+              <input id="cWeb" class="w-full p-2 border rounded text-[13px]"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Phones (comma separated)</label>
+              <input id="cPhones" class="w-full p-2 border rounded text-[13px]"></div>
+          </div>
+          <button onclick="saveContact()" class="mt-3 bg-brandBlue text-white text-[12px] font-bold px-4 py-2 rounded">Save Contact</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 mt-4">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-brandNavy text-sm">FAQ</h3>
+            <button onclick="addFaq()" class="bg-brandBlue text-white text-[12px] font-bold px-3 py-2 rounded">+ Add FAQ</button>
+          </div>
+          <div id="faqAdminList" class="space-y-2"></div>
+          <button onclick="saveFaq()" class="mt-3 bg-brandBlue text-white text-[12px] font-bold px-4 py-2 rounded">Save FAQs</button>
+        </div>
+      </section>
+
+      <!-- CLIENTS -->
+      <section id="tab-clients" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <h3 class="font-bold text-brandNavy text-sm">Client Accounts</h3>
+            <div class="flex gap-2">
+              <button onclick="exportCSV('clients')" class="bg-green-600 text-white text-[12px] font-bold px-3 py-2 rounded">Export CSV</button>
+            </div>
+          </div>
+          <div id="clientList" class="overflow-x-auto text-[12px]"></div>
+        </div>
+      </section>
+
+      <!-- PAYMENTS -->
+      <section id="tab-payments" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <h3 class="font-bold text-brandNavy text-sm">Payments & Invoices</h3>
+            <button onclick="exportCSV('payments')" class="bg-green-600 text-white text-[12px] font-bold px-3 py-2 rounded">Export CSV</button>
+          </div>
+          <div id="paymentList" class="overflow-x-auto text-[12px]"></div>
+        </div>
+      </section>
+
+      <!-- COMMISSIONS -->
+      <section id="tab-commissions" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-1">Multi-Level Commission Ledger</h3>
+          <p class="text-[11px] text-gray-500 mb-3">
+            Standard estates: 10% direct · 2% level 1 · 1% level 2. Easy Buy: 7% direct · 2% level 1 · 1% level 2. Consultant-sale commissions are created automatically when a receipt is approved under Sales Receipts.
+          </p>
+          <div class="flex gap-2 mb-3">
+            <button onclick="exportCSV('commissions')" class="bg-green-600 text-white text-[12px] font-bold px-3 py-2 rounded">Export CSV</button>
+            <button onclick="renderCommissions()" class="bg-gray-100 text-gray-700 text-[12px] font-bold px-3 py-2 rounded">Refresh</button>
+          </div>
+          <div id="commissionList" class="overflow-x-auto text-[12px]"></div>
+        </div>
+      </section>
+
+      <!-- CONSULTANTS -->
+      <section id="tab-consultants" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h3 class="font-bold text-brandNavy text-sm">Consultant Accounts</h3>
+            <button onclick="exportCSV('consultants')" class="bg-green-600 text-white text-[12px] font-bold px-3 py-2 rounded">Export CSV</button>
+          </div>
+          <p class="text-[11px] text-gray-500 mb-3">
+            Assigning a Consultant ID (format CH/IC/YY/0001) completes onboarding and activates the account.
+            Consultants cannot log in until an ID has been generated.
+          </p>
+          <div id="consultantAdminList" class="overflow-x-auto text-[12px]"></div>
+        </div>
+      </section>
+
+      <!-- SALES RECEIPTS -->
+      <section id="tab-sales" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <h3 class="font-bold text-brandNavy text-sm">Consultant Sales &amp; Payment Receipts</h3>
+            <div class="flex gap-2">
+              <select id="salesFilter" onchange="renderSalesAdmin()" class="border rounded p-2 text-[12px] bg-white">
+                <option value="">All statuses</option><option>Pending</option><option>Approved</option><option>Rejected</option>
+              </select>
+              <button onclick="exportCSV('sales')" class="bg-green-600 text-white text-[12px] font-bold px-3 py-2 rounded">Export CSV</button>
+            </div>
+          </div>
+          <p class="text-[11px] text-gray-500 mb-3">
+            Approving a receipt automatically creates the commissions for every beneficiary linked to the sale.
+            Rejecting requires a reason, which the consultant sees.
+          </p>
+          <div id="salesAdminList" class="overflow-x-auto text-[12px]"></div>
+        </div>
+      </section>
+
+      <!-- STAFF -->
+      <section id="tab-staff" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-3">Staff Profiles</h3>
+          <input type="hidden" id="stId">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Full Name *</label>
+              <input id="stName" class="w-full p-2 border rounded"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Role / Position *</label>
+              <input id="stRole" class="w-full p-2 border rounded" placeholder="Sales Consultant"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-3">
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Department</label>
+              <input id="stDept" class="w-full p-2 border rounded"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Phone</label>
+              <input id="stPhone" class="w-full p-2 border rounded"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Email</label>
+              <input id="stEmail" class="w-full p-2 border rounded"></div>
+          </div>
+          <div class="mt-3"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Referral Code (auto if blank)</label>
+            <input id="stRef" class="w-full p-2 border rounded" placeholder="e.g. CIRP-AB12"></div>
+          <div class="mt-3"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Reports To (upline referral code)</label>
+            <input id="stUpline" class="w-full p-2 border rounded" placeholder="Leave blank for GM/Top level"></div>
+          <div class="flex gap-2 mt-4">
+            <button onclick="saveStaff()" class="bg-brandBlue text-white text-[12px] font-bold px-4 py-2 rounded">Save Staff</button>
+            <button onclick="clearStaffForm()" class="bg-gray-100 text-gray-700 text-[12px] font-bold px-4 py-2 rounded">Clear</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl p-4 mt-4">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-brandNavy text-sm">Staff Directory</h3>
+            <button onclick="exportCSV('staff')" class="bg-green-600 text-white text-[12px] font-bold px-3 py-2 rounded">Export CSV</button>
+          </div>
+          <div id="staffList" class="overflow-x-auto text-[12px]"></div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section id="tab-settings" class="hide">
+        <div class="bg-white rounded-xl p-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-3">Payment Gateway</h3>
+          <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Paystack Public Key</label>
+          <input id="setPaystack" class="w-full p-2 border rounded text-[13px]" placeholder="pk_live_... or pk_test_...">
+          <label class="block text-[11px] font-bold uppercase text-gray-600 mt-3 mb-1">Paystack Secret Key</label>
+          <input id="setPaystackSecret" type="password" autocomplete="off" class="w-full p-2 border rounded text-[13px]" placeholder="sk_live_... or sk_test_...">
+          <p class="text-[11px] text-gray-500 mt-2">
+            The public key opens Paystack checkout. The secret key stays on the server and is used to confirm each payment with Paystack before it is marked Paid.
+            Optional but recommended: in your Paystack dashboard set the webhook URL to
+            <span class="font-mono">https://YOUR-DOMAIN/api/paystack/webhook</span>.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 mt-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-3">Security</h3>
+          <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Admin Password</label>
+          <input id="setPass" type="password" autocomplete="new-password" class="w-full p-2 border rounded text-[13px]" placeholder="New password (min. 8 characters)">
+          <button onclick="saveSettings()" class="mt-3 bg-brandBlue text-white text-[12px] font-bold px-4 py-2 rounded">Save Settings</button>
+        </div>
+
+        <div class="bg-white rounded-xl p-4 mt-4">
+          <h3 class="font-bold text-brandNavy text-sm mb-3">Data</h3>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="exportAll()" class="bg-green-600 text-white text-[12px] font-bold px-3 py-2 rounded">Download full backup (JSON)</button>
+            <button onclick="resetDemo()" class="bg-red-500 text-white text-[12px] font-bold px-3 py-2 rounded">Reset all data</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- ================= CONSULTANT PORTAL ================= -->
+<div id="consultantOverlay" class="hide fixed inset-0 z-[100] bg-gray-100 overflow-y-auto">
+
+  <!-- AUTH -->
+  <div id="csAuth" class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-6 rounded-xl shadow max-w-lg w-full my-6">
+      <div class="text-center mb-4">
+        <div class="w-14 h-14 rounded-full bg-brandYellow flex items-center justify-center font-bold text-brandNavy text-2xl mx-auto mb-2">C</div>
+        <h2 class="font-bold text-brandNavy">Consultant Portal</h2>
+        <p class="text-[12px] text-gray-500">Cirpman Homes Limited</p>
+      </div>
+      <div id="csMsg" class="hide text-[12px] p-2.5 rounded mb-3"></div>
+
+      <!-- LOGIN -->
+      <div id="csPaneLogin">
+        <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Email or Phone Number</label>
+        <input id="csLoginUser" autocomplete="username" class="w-full p-2.5 border rounded mb-3" placeholder="you@email.com or 0806 000 0000">
+        <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Password</label>
+        <input id="csLoginPass" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')csLogin()" class="w-full p-2.5 border rounded mb-3">
+        <button onclick="csLogin()" class="w-full bg-brandBlue text-white font-bold py-2.5 rounded">Login</button>
+        <div class="flex justify-between mt-3 text-[12px]">
+          <button onclick="csPane('forgot')" class="text-brandBlue hover:underline">Forgot password?</button>
+          <button onclick="csPane('register')" class="text-brandBlue hover:underline">New consultant? Register</button>
+        </div>
+      </div>
+
+      <!-- REGISTER -->
+      <form id="csPaneRegister" class="hide" onsubmit="return csRegister(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Full Name *</label>
+            <input id="rgName" required class="w-full p-2.5 border rounded"></div>
+          <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Email *</label>
+            <input id="rgEmail" type="email" required class="w-full p-2.5 border rounded"></div>
+          <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Phone *</label>
+            <input id="rgPhone" required placeholder="0806 000 0000" class="w-full p-2.5 border rounded"></div>
+          <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Password *</label>
+            <input id="rgPass" type="password" minlength="6" required autocomplete="new-password" class="w-full p-2.5 border rounded"></div>
+          <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Confirm Password *</label>
+            <input id="rgPass2" type="password" minlength="6" required autocomplete="new-password" class="w-full p-2.5 border rounded"></div>
+          <div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Passport Photograph *</label>
+            <div class="flex items-center gap-3">
+              <img id="rgPassportPrev" class="hide w-16 h-16 rounded object-cover border" alt="Passport preview">
+              <input id="rgPassport" type="file" accept="image/*" required onchange="csPreviewPassport(this)" class="text-[12px] w-full">
+            </div>
+            <p class="text-[10px] text-gray-500 mt-1">Clear, recent, front-facing photo (JPG or PNG).</p></div>
+          <div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Cause of Registration *</label>
+            <textarea id="rgCause" required minlength="10" rows="3" class="w-full p-2.5 border rounded" placeholder="Tell us why you want to join the platform"></textarea></div>
+          <div class="md:col-span-2"><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Referred By (optional)</label>
+            <input id="rgUpline" class="w-full p-2.5 border rounded" placeholder="Consultant ID or referral code of the person who invited you"></div>
+        </div>
+        <button type="submit" class="w-full mt-4 bg-brandBlue text-white font-bold py-2.5 rounded">Submit Registration</button>
+        <p class="text-[11px] text-gray-500 mt-2">Your account is activated once the Admin assigns your Consultant ID.</p>
+        <button type="button" onclick="csPane('login')" class="w-full mt-2 text-[12px] text-brandBlue hover:underline">Already registered? Login</button>
+      </form>
+
+      <!-- FORGOT -->
+      <div id="csPaneForgot" class="hide">
+        <p class="text-[12px] text-gray-600 mb-3">Confirm the email address and phone number you registered with, then choose a new password.</p>
+        <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Registered Email</label>
+        <input id="fpEmail" type="email" class="w-full p-2.5 border rounded mb-3">
+        <label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Registered Phone</label>
+        <input id="fpPhone" class="w-full p-2.5 border rounded mb-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+          <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">New Password</label>
+            <input id="fpPass" type="password" autocomplete="new-password" class="w-full p-2.5 border rounded"></div>
+          <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Confirm New Password</label>
+            <input id="fpPass2" type="password" autocomplete="new-password" class="w-full p-2.5 border rounded"></div>
+        </div>
+        <button onclick="csResetPassword()" class="w-full bg-brandBlue text-white font-bold py-2.5 rounded">Reset Password</button>
+        <button onclick="csPane('login')" class="w-full mt-3 text-[12px] text-brandBlue hover:underline">← Back to login</button>
+      </div>
+
+      <button onclick="hideConsultant()" class="w-full mt-4 text-[12px] text-gray-500 hover:text-brandBlue">← Back to website</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="csDash" class="hide min-h-screen">
+    <header class="bg-brandNavy text-white sticky top-0 z-10">
+      <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3 min-w-0">
+          <img id="csPhoto" class="w-11 h-11 rounded-full object-cover border-2 border-brandYellow bg-white" alt="Passport">
+          <div class="min-w-0">
+            <p id="csName" class="text-sm font-bold leading-tight truncate"></p>
+            <p id="csIdLabel" class="text-[11px] text-brandYellow font-mono"></p>
+          </div>
+        </div>
+        <div class="flex gap-2 shrink-0">
+          <button onclick="hideConsultant()" class="text-[12px] bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded font-bold">Website</button>
+          <button onclick="csLogout()" class="text-[12px] bg-red-500 hover:bg-red-600 px-3 py-1.5 rounded font-bold">Logout</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-4 pb-16 space-y-4">
+      <div id="csStats" class="grid grid-cols-2 md:grid-cols-5 gap-3"></div>
+
+      <div class="bg-white rounded-xl p-4">
+        <h3 class="font-bold text-brandNavy text-sm mb-3">Submit a Sale</h3>
+        <form onsubmit="return csSubmitSale(event)">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Client Name *</label>
+              <input id="slClient" required class="w-full p-2 border rounded"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Client Phone</label>
+              <input id="slPhone" class="w-full p-2 border rounded"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Estate *</label>
+              <select id="slEstate" required onchange="csFillPlots()" class="w-full p-2 border rounded bg-white"></select></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Plot Size *</label>
+              <select id="slPlot" required class="w-full p-2 border rounded bg-white"></select></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Amount Paid (₦) *</label>
+              <input id="slAmount" type="number" min="1" required class="w-full p-2 border rounded"></div>
+            <div><label class="block text-[11px] font-bold uppercase text-gray-600 mb-1">Payment Receipt *</label>
+              <input id="slReceipt" type="file" accept="image/*,application/pdf" required class="text-[12px] w-full"></div>
+          </div>
+          <p class="text-[11px] text-gray-500 mt-2">Upload the digital payment receipt (image or PDF). Commissions are released only after the Admin approves it.</p>
+          <button type="submit" class="mt-3 bg-brandBlue text-white text-[12px] font-bold px-4 py-2 rounded">Submit Sale for Review</button>
+        </form>
+      </div>
+
+      <div class="bg-white rounded-xl p-4">
+        <h3 class="font-bold text-brandNavy text-sm mb-3">My Sales</h3>
+        <div id="csSales" class="overflow-x-auto text-[12px]"></div>
+      </div>
+
+      <div class="bg-white rounded-xl p-4">
+        <h3 class="font-bold text-brandNavy text-sm mb-1">My Commissions</h3>
+        <p class="text-[11px] text-gray-500 mb-3">Includes commissions from your own approved sales and from sales in your network where you are a beneficiary.</p>
+        <div id="csCommissions" class="overflow-x-auto text-[12px]"></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- DOCUMENT VIEWER -->
+<div id="docModal" class="hide fixed inset-0 z-[130] bg-black/60 p-4 overflow-y-auto noprint">
+  <div class="bg-white max-w-2xl mx-auto rounded-xl p-4 mt-6">
+    <div class="flex justify-between items-center mb-3">
+      <h4 id="docTitle" class="font-bold text-brandNavy text-sm"></h4>
+      <button onclick="closeDoc()" class="text-[12px] bg-gray-100 px-3 py-1.5 rounded font-bold">Close</button>
+    </div>
+    <div id="docBody" class="text-center"></div>
+  </div>
+</div>
+
+<!-- REJECT MODAL -->
+<div id="rejectModal" class="hide fixed inset-0 z-[140] bg-black/60 p-4 overflow-y-auto noprint">
+  <div class="bg-white max-w-md mx-auto rounded-xl p-5 mt-16">
+    <h4 class="font-bold text-brandNavy text-sm mb-1">Reject Payment Receipt</h4>
+    <p class="text-[11px] text-gray-500 mb-3">The consultant will see this reason on their dashboard.</p>
+    <input type="hidden" id="rejectSaleId">
+    <textarea id="rejectReason" rows="4" class="w-full p-2 border rounded text-[13px]" placeholder="Reason for rejection (required)"></textarea>
+    <div class="flex gap-2 mt-3">
+      <button onclick="confirmReject()" class="bg-red-600 text-white text-[12px] font-bold px-4 py-2 rounded">Reject Receipt</button>
+      <button onclick="closeReject()" class="bg-gray-100 text-gray-700 text-[12px] font-bold px-4 py-2 rounded">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- RECEIPT MODAL -->
+<div id="receiptModal" class="hide fixed inset-0 z-[120] bg-black/50 p-4 overflow-y-auto noprint">
+  <div class="bg-white max-w-md mx-auto rounded-xl p-5 mt-8" id="receiptBody"></div>
+</div>
+
+<script>
+/* ============================================================
+   STORE
+============================================================ */
+/* ============================================================
+   DATA LAYER
+   All data lives on the Cirpman server (see server.js). The browser keeps a
+   read cache; every change is saved through the server API, and anything
+   sensitive (passwords, prices, commissions, approvals) is decided server-side.
+============================================================ */
+const TOK = { admin: 'cirpman_admin_token', cs: 'cirpman_cs_token' };
+const CACHE = {};
+const SNAP = {};                 // last-saved snapshot of editable collections (for change detection)
+const PUB_PAYMENTS = {};         // receipts for subscriptions made in this browser
+const PUB_CLIENTS = {};
+const SYNC_COLLECTIONS = ['estates', 'gallery', 'staff'];
+let syncQueue = Promise.resolve();
+
+async function api(method, path, body, who) {
+  const headers = { 'Content-Type': 'application/json' };
+  const t = who ? sessionStorage.getItem(TOK[who]) : null;
+  if (t) headers.Authorization = 'Bearer ' + t;
+  let res;
+  try {
+    res = await fetch(path, { method, headers, body: body == null ? undefined : JSON.stringify(body) });
+  } catch (e) {
+    throw new Error('Cannot reach the server. Please check your connection and try again.');
+  }
+  let data = {};
+  try { data = await res.json(); } catch (e) { /* empty body */ }
+  if (!res.ok) {
+    const err = new Error(data.error || 'Request failed (' + res.status + ')');
+    err.status = res.status; err.code = data.code || null;
+    if (who === 'admin' && res.status === 401) adminSessionExpired();
+    if (who === 'cs' && (err.code === 'INACTIVE' || err.code === 'CS_AUTH')) csSessionEnded(err.code);
+    throw err;
+  }
+  return data;
+}
+
+const snapOf = list => new Map((list || []).map(o => [o.id, JSON.stringify(o)]));
+
+const DB = {
+  get(k, fb) { const v = CACHE[k]; return v === undefined || v === null ? fb : v; },
+  set(k, v) {
+    CACHE[k] = v;
+    if (!sessionStorage.getItem(TOK.admin)) return true;       // only the admin can save changes
+    let job = null;
+    if (SYNC_COLLECTIONS.includes(k)) {
+      const before = SNAP[k] || new Map();
+      const upserts = (v || []).filter(o => before.get(o.id) !== JSON.stringify(o));
+      const keep = new Set((v || []).map(o => o.id));
+      const deletes = [...before.keys()].filter(id => !keep.has(id));
+      SNAP[k] = snapOf(v);
+      if (upserts.length || deletes.length) job = () => api('POST', '/api/admin/sync', { collection: k, upserts, deletes }, 'admin');
+    } else if (k === 'content') {
+      job = () => api('PUT', '/api/admin/content', { content: v }, 'admin');
+    }
+    if (job) {
+      syncQueue = syncQueue.then(job).catch(e => {
+        alert('Could not save to the server: ' + e.message);
+        return loadAdminData().then(refreshAfterReload).catch(() => {});
+      });
+    }
+    return true;
+  }
+};
+
+async function loadPublic() {
+  const d = await api('GET', '/api/public');
+  CACHE.estates = d.estates; CACHE.gallery = d.gallery; CACHE.content = d.content; CACHE.paystackKey = d.paystackKey;
+}
+async function loadAdminData() {
+  const d = await api('GET', '/api/admin/data', null, 'admin');
+  Object.assign(CACHE, d);
+  CACHE.paystackKey = (d.settings && d.settings.paystack) || '';
+  SYNC_COLLECTIONS.forEach(k => { SNAP[k] = snapOf(CACHE[k]); });
+}
+function refreshAfterReload() {
+  renderPublicEstates(); renderPublicGallery(); renderPublicContent();
+  const open = document.querySelector('[id^="tab-"]:not(.hide)');
+  if (open) switchTab(open.id.slice(4));
+}
+
+/* ---------- HELPERS ---------- */
+const money = n => '₦' + Number(n || 0).toLocaleString('en-NG');
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const uid = p => p + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+const today = () => new Date().toLocaleDateString('en-GB');
+
+
+
+/* ============================================================
+   PUBLIC RENDERING
+============================================================ */
+function renderPublicEstates() {
+  const estates = DB.get('estates', []).filter(e => e.active !== false);
+  const grid = document.getElementById('estateGrid');
+  if (!estates.length) { grid.innerHTML = '<p class="text-gray-400 text-sm">No estates published yet.</p>'; return; }
+
+  grid.innerHTML = estates.map(e => {
+    const cheapest = e.plots && e.plots.length ? Math.min.apply(null, e.plots.map(p => p.outright)) : 0;
+    const rows = (e.plots || []).map(p => `
+      <div class="flex justify-between text-[12px] py-0.5">
+        <span class="text-gray-500">${esc(p.size)}</span>
+        <span class="font-semibold text-brandBlue">${money(p.outright)}</span>
+      </div>`).join('');
+    const badge = e.type === 'easybuy' ? 'Easy Buy' : 'Normal Estate';
+    const badgeCls = e.type === 'easybuy' ? 'bg-brandYellow text-brandNavy' : 'bg-green-600 text-white';
+    return `
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
+        <div class="h-44 bg-gray-100 relative">
+          ${e.image ? `<img src="${esc(e.image)}" alt="${esc(e.name)}" class="w-full h-full object-cover">` : ''}
+          <span class="absolute top-2 left-2 ${badgeCls} text-[10px] font-bold px-2 py-1 rounded">${esc(badge)}</span>
+          <span class="absolute top-2 right-2 bg-white/90 text-brandNavy text-[10px] font-bold px-2 py-1 rounded">${esc(e.title || 'C of O')}</span>
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h4 class="font-bold text-brandNavy">${esc(e.name)}</h4>
+          <p class="text-[11px] text-gray-500 mb-2">${esc(e.location)}</p>
+          <p class="text-[12px] text-gray-600 mb-3 flex-grow">${esc(e.desc || '')}</p>
+          <div class="border-t pt-2 space-y-0.5">${rows}</div>
+          ${cheapest ? `<p class="text-[11px] text-gray-500 mt-2">From <span class="font-bold text-brandNavy">${money(cheapest)}</span></p>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function renderPublicGallery() {
+  const items = DB.get('gallery', []);
+  const grid = document.getElementById('galleryGrid');
+  const empty = document.getElementById('galleryEmpty');
+  if (!items.length) { grid.innerHTML = ''; empty.classList.remove('hide'); return; }
+  empty.classList.add('hide');
+  grid.innerHTML = items.map(g => g.type === 'video'
+    ? `<div class="rounded-lg overflow-hidden border bg-black aspect-video">
+         <video src="${esc(g.url)}" controls class="w-full h-full object-cover"></video>
+         <p class="bg-white text-[11px] px-2 py-1 text-gray-600">${esc(g.caption || '')}</p>
+       </div>`
+    : `<div class="rounded-lg overflow-hidden border aspect-video relative">
+         <img src="${esc(g.url)}" alt="${esc(g.caption || '')}" class="w-full h-full object-cover">
+         <p class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 to-transparent text-white text-[11px] px-2 py-1.5">${esc(g.caption || '')}</p>
+       </div>`).join('');
+}
+
+function renderPublicContent() {
+  const c = DB.get('content', {});
+  document.getElementById('aboutBody').innerHTML =
+    String(c.about || '').split(/\n+/).filter(Boolean).map(p => `<p>${esc(p)}</p>`).join('');
+
+  document.getElementById('contactAddress').innerHTML = String(c.address || '').replace(/\n/g, '<br>');
+  const linkCls = 'hover:text-brandYellow underline-offset-2 hover:underline transition-colors';
+  const emailEl = document.getElementById('contactEmail');
+  const email = String(c.email || '').trim();
+  emailEl.innerHTML = email
+    ? `<a href="mailto:${esc(email)}" class="${linkCls}"><i class="fa-solid fa-envelope text-[11px] text-brandYellow mr-2"></i>${esc(email)}</a>`
+    : '';
+  const siteEl = document.getElementById('contactWebsite');
+  const site = String(c.website || '').trim();
+  const siteHref = /^https?:\/\//i.test(site) ? site : 'https://' + site;
+  siteEl.innerHTML = site
+    ? `<a href="${esc(siteHref)}" target="_blank" rel="noopener noreferrer" class="${linkCls}"><i class="fa-solid fa-globe text-[11px] text-brandYellow mr-2"></i>${esc(site)}</a>`
+    : '';
+
+  document.getElementById('contactBranches').innerHTML =
+    String(c.branches || '').split('\n').filter(Boolean)
+      .map(b => `<li><i class="fa-solid fa-location-arrow text-[10px] text-brandYellow mr-2"></i>${esc(b)}</li>`).join('');
+
+  const phones = String(c.phones || '').split(',').map(s => s.trim()).filter(Boolean);
+  document.getElementById('contactPhones').innerHTML = phones
+    .map((p, i) => `<p class="${i === 0 ? 'text-xl text-brandYellow font-bold' : 'text-base text-gray-300'} font-mono"><a href="tel:${esc(p.replace(/[^\d+]/g, ''))}" class="hover:underline">${esc(p)}</a></p>`)
+    .join('');
+
+  document.getElementById('faqList').innerHTML = (c.faqs || []).map((f, i) => `
+    <div class="bg-white rounded-lg border overflow-hidden">
+      <button onclick="togglePublicFaq(${i})" class="w-full text-left p-4 font-bold text-brandNavy text-[13px] flex justify-between items-center">
+        <span>${esc(f.q)}</span>
+        <i id="pf-${i}" class="fa-solid fa-chevron-down text-xs"></i>
+      </button>
+      <div id="pa-${i}" class="hidden px-4 pb-4 text-[12px] text-gray-600 border-t pt-2">${esc(f.a)}</div>
+    </div>`).join('');
+}
+
+function togglePublicFaq(i) {
+  document.getElementById('pa-' + i).classList.toggle('hidden');
+  document.getElementById('pf-' + i).classList.toggle('rotate-180');
+}
+
+/* ---------- SUBSCRIPTION ---------- */
+function currentEstatesFor(type) {
+  const map = { 'Normal Estate':'standard', 'Easy Buy':'easybuy' };
+  const t = map[type];
+  return DB.get('estates', []).filter(e => e.active !== false && (!t || e.type === t));
+}
+
+function refreshEstateOptions() {
+  const type = document.getElementById('subAccountType').value;
+  const sel = document.getElementById('subEstate');
+  const list = currentEstatesFor(type);
+  sel.innerHTML = type
+    ? '<option value="">Select estate...</option>' + list.map(e => `<option value="${e.id}">${esc(e.name)} — ${esc(e.location)}</option>`).join('')
+    : '<option value="">Select account type first</option>';
+  refreshPlotOptions();
+}
+
+function refreshPlotOptions() {
+  const id = document.getElementById('subEstate').value;
+  const sel = document.getElementById('subPlot');
+  const estate = DB.get('estates', []).find(e => e.id === id);
+  if (!estate) { sel.innerHTML = '<option value="">Select estate first</option>'; refreshPricePreview(); return; }
+  sel.innerHTML = '<option value="">Select size...</option>' +
+    (estate.plots || []).map((p, i) => `<option value="${i}">${esc(p.size)}</option>`).join('');
+  refreshPricePreview();
+}
+
+function selectedPrice() {
+  const estateId = document.getElementById('subEstate').value;
+  const idx = document.getElementById('subPlot').value;
+  const plan = document.getElementById('subPlan').value;
+  const estate = DB.get('estates', []).find(e => e.id === estateId);
+  if (!estate || idx === '') return { estate: null, plot: null, plan, amount: 0 };
+  const plot = estate.plots[Number(idx)];
+  if (!plot) return { estate, plot: null, plan, amount: 0 };
+  let amount = plot.outright;
+  if (plan === 'm6') amount = plot.m6 > 0 ? plot.m6 : plot.outright;
+  if (plan === 'm12') amount = plot.m12 > 0 ? plot.m12 : (plot.m6 > 0 ? plot.m6 : plot.outright);
+  return { estate, plot, plan, amount };
+}
+
+function refreshPricePreview() {
+  const p = selectedPrice();
+  document.getElementById('subPrice').textContent = money(p.amount);
+}
+
+async function submitSubscription(ev) {
+  ev.preventDefault();
+  const p = selectedPrice();
+  if (!p.estate || !p.plot) { alert('Please select an estate and plot size.'); return false; }
+  if (!p.amount) { alert('This plot size has no price set for the chosen plan. Please pick another plan.'); return false; }
+
+  const name  = document.getElementById('subName').value.trim();
+  const email = document.getElementById('subEmail').value.trim();
+  const phone = document.getElementById('subPhone').value.trim();
+  const ref   = document.getElementById('subRef').value.trim();
+  const method = document.getElementById('subMethod').value;
+  const plotIndex = Number(document.getElementById('subPlot').value);
+  const btn = ev.target.querySelector('button[type="submit"]');
+  if (btn) btn.disabled = true;
+
+  try {
+    // The server recalculates the price itself — the amount shown here is only a preview.
+    const r = await api('POST', '/api/subscribe', {
+      name, email, phone, ref, method, estateId: p.estate.id, plotIndex, plan: p.plan
+    });
+    const payment = r.payment, client = r.client;
+    PUB_PAYMENTS[payment.id] = payment; PUB_CLIENTS[client.id] = client;
+
+    const box = document.getElementById('subSuccess');
+    const body = document.getElementById('subSuccessBody');
+    body.innerHTML = `
+      <p>Your account has been created.</p>
+      <p class="mt-1"><strong>Client ID:</strong> ${esc(client.clientId)} &nbsp; <strong>Temporary password:</strong> ${esc(r.tempPassword)}</p>
+      <p class="mt-1"><strong>Receipt No:</strong> ${esc(payment.receiptNo)}</p>
+      <p class="mt-1"><strong>Amount:</strong> ${money(payment.amount)} · ${esc(p.estate.name)} · ${esc(p.plot.size)}</p>
+      <p class="mt-2 text-[11px]">${
+        method === 'paystack'
+          ? 'Complete payment to activate your allocation.'
+          : 'Transfer to UBA 1026575590 (Cirpman Homes Limited) and quote your Client ID.'
+      }</p>
+      <button onclick="openReceipt('${esc(payment.id)}')" class="mt-2 bg-brandBlue text-white text-[12px] font-bold px-3 py-2 rounded">View / Print Receipt</button>
+    `;
+    box.classList.remove('hide');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    document.getElementById('subForm').reset();
+    refreshEstateOptions();
+    refreshPricePreview();
+
+    if (payment.method === 'paystack') startPaystack(payment, email);
+  } catch (e) {
+    alert(e.message);
+  } finally {
+    if (btn) btn.disabled = false;
+  }
+  return false;
+}
+
+/* ---------- PAYSTACK ---------- */
+function startPaystack(payment, email) {
+  const key = DB.get('paystackKey', '');
+  if (!key) {
+    alert('Online payment is not available yet. Your subscription is recorded as awaiting payment — the company will contact you.');
+    return;
+  }
+  if (typeof PaystackPop === 'undefined') {
+    alert('Paystack did not load (no internet?). Your subscription is saved and awaits payment.');
+    return;
+  }
+  const handler = PaystackPop.setup({
+    key,
+    email: email || 'client@cirpman.com',
+    amount: Math.round(payment.amount * 100),
+    currency: 'NGN',
+    ref: payment.receiptNo,
+    metadata: { clientNo: payment.clientNo, estate: payment.estateName },
+    callback: function (res) { confirmPaystack(payment.id, res.reference || payment.receiptNo); },
+    onClose: function () { /* user dismissed; payment stays unpaid */ }
+  });
+  handler.openIframe();
+}
+
+async function confirmPaystack(paymentId, reference) {
+  try {
+    const r = await api('POST', '/api/paystack/verify', { paymentId, reference });
+    PUB_PAYMENTS[paymentId] = r.payment;
+    alert('Payment confirmed. Thank you! You can open your receipt from the confirmation box.');
+  } catch (e) {
+    alert(e.message + '\n\nIf your account was debited, please contact us and quote reference: ' + reference);
+  }
+}
+
+/* ---------- RECEIPT ---------- */
+function findPayment(id) {
+  return DB.get('payments', []).find(x => x.id === id) || PUB_PAYMENTS[id];
+}
+function openReceipt(paymentId) {
+  const p = findPayment(paymentId);
+  if (!p) return;
+  const c = DB.get('content', {});
+  document.getElementById('receiptBody').innerHTML = `
+    <div class="text-center border-b pb-3 mb-3">
+      <p class="text-lg font-extrabold tracking-[0.2em] text-brandNavy">CIRPMAN</p>
+      <p class="text-[10px] tracking-[0.2em] text-brandBlue font-semibold">HOMES LIMITED</p>
+      <p class="text-[10px] text-gray-500 mt-1">RC: 7114480 · TIN: 31532163-0001</p>
+    </div>
+    <p class="text-center font-bold text-sm mb-3">PAYMENT RECEIPT</p>
+    <table class="w-full text-[12px]">
+      <tr><td class="py-1 text-gray-500">Receipt No</td><td class="py-1 text-right font-semibold">${esc(p.receiptNo)}</td></tr>
+      <tr><td class="py-1 text-gray-500">Date</td><td class="py-1 text-right">${new Date(p.date).toLocaleString('en-GB')}</td></tr>
+      <tr><td class="py-1 text-gray-500">Client</td><td class="py-1 text-right font-semibold">${esc(p.clientName)}</td></tr>
+      <tr><td class="py-1 text-gray-500">Client ID</td><td class="py-1 text-right">CHL-${esc(p.clientNo)}</td></tr>
+      <tr><td class="py-1 text-gray-500">Estate</td><td class="py-1 text-right">${esc(p.estateName)}</td></tr>
+      <tr><td class="py-1 text-gray-500">Plot</td><td class="py-1 text-right">${esc(p.plotSize)}</td></tr>
+      <tr><td class="py-1 text-gray-500">Method</td><td class="py-1 text-right">${esc(p.method)}</td></tr>
+      <tr><td class="py-1 text-gray-500">Status</td><td class="py-1 text-right font-bold">${esc(p.status)}</td></tr>
+    </table>
+    <div class="border-t mt-3 pt-3 flex justify-between items-center">
+      <span class="text-[12px] text-gray-500">Amount</span>
+      <span class="text-lg font-extrabold">${money(p.amount)}</span>
+    </div>
+    <p class="text-[10px] text-gray-500 mt-3 leading-relaxed">
+      Payments are received by Cirpman Homes Limited, UBA 1026575590. Keep this receipt for your records.
+    </p>
+    <p class="text-[10px] text-gray-500 mt-1">${esc(c.email || '')}</p>
+    <div class="flex gap-2 mt-4 noprint">
+      <button onclick="window.print()" class="flex-1 bg-brandBlue text-white font-bold py-2 rounded text-[12px]">Print</button>
+      <button onclick="emailReceipt('${p.id}')" class="flex-1 bg-gray-100 text-gray-700 font-bold py-2 rounded text-[12px]">Email</button>
+      <button onclick="closeReceipt()" class="flex-1 bg-gray-100 text-gray-700 font-bold py-2 rounded text-[12px]">Close</button>
+    </div>`;
+  document.getElementById('receiptModal').classList.remove('hide');
+}
+
+function closeReceipt() { document.getElementById('receiptModal').classList.add('hide'); }
+
+function emailReceipt(id) {
+  const p = findPayment(id);
+  if (!p) return;
+  const c = DB.get('clients', []).find(x => x.id === p.clientId) || PUB_CLIENTS[p.clientId] || {};
+  const subject = encodeURIComponent('Cirpman Homes Payment Receipt ' + p.receiptNo);
+  const body = encodeURIComponent(
+    'Dear ' + (p.clientName || 'Client') + ',\n\n' +
+    'Thank you for your payment to Cirpman Homes Limited.\n\n' +
+    'Receipt No: ' + p.receiptNo + '\n' +
+    'Estate: ' + p.estateName + ' (' + p.plotSize + ')\n' +
+    'Amount: N' + Number(p.amount).toLocaleString('en-NG') + '\n' +
+    'Status: ' + p.status + '\n\n' +
+    'Cirpman Homes Limited\nRC 7114480'
+  );
+  window.location.href = 'mailto:' + (c.email || '') + '?subject=' + subject + '&body=' + body;
+}
+
+/* ============================================================
+   ADMIN
+============================================================ */
+async function showAdmin() {
+  document.getElementById('adminOverlay').classList.remove('hide');
+  window.scrollTo(0, 0);
+  if (sessionStorage.getItem(TOK.admin)) {
+    try {
+      await loadAdminData();
+      document.getElementById('adminLogin').classList.add('hide');
+      document.getElementById('adminDash').classList.remove('hide');
+      switchTab('overview');
+      return;
+    } catch (e) { /* expired or unreachable: fall through to the login form */ }
+  }
+  document.getElementById('adminLogin').classList.remove('hide');
+  document.getElementById('adminDash').classList.add('hide');
+  document.getElementById('adminPass').value = '';
+}
+function hideAdmin() { document.getElementById('adminOverlay').classList.add('hide'); }
+
+async function doLogin() {
+  const input = document.getElementById('adminPass').value;
+  const e = document.getElementById('loginErr');
+  try {
+    const r = await api('POST', '/api/admin/login', { password: input });
+    sessionStorage.setItem(TOK.admin, r.token);
+    await loadAdminData();
+    e.classList.add('hide');
+    document.getElementById('adminPass').value = '';
+    document.getElementById('adminLogin').classList.add('hide');
+    document.getElementById('adminDash').classList.remove('hide');
+    switchTab('overview');
+  } catch (err) {
+    e.textContent = err.message;
+    e.classList.remove('hide');
+  }
+}
+function doLogout() {
+  sessionStorage.removeItem(TOK.admin);
+  location.reload();          // drops every admin-only record from memory
+}
+function adminSessionExpired() {
+  sessionStorage.removeItem(TOK.admin);
+  document.getElementById('adminDash').classList.add('hide');
+  document.getElementById('adminLogin').classList.remove('hide');
+  const e = document.getElementById('loginErr');
+  e.textContent = 'Your session has expired. Please log in again.';
+  e.classList.remove('hide');
+}
+
+function switchTab(name) {
+  document.querySelectorAll('[id^="tab-"]').forEach(s => s.classList.add('hide'));
+  const target = document.getElementById('tab-' + name);
+  if (target) target.classList.remove('hide');
+
+  document.querySelectorAll('.tabbtn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tabbtn').forEach(b => {
+    if ((b.getAttribute('onclick') || '').includes("'" + name + "'")) b.classList.add('active');
+  });
+  updateAdminBadges();
+
+  if (name === 'overview') { renderStats(); renderRecentClients(); }
+  if (name === 'estates') renderEstateAdmin();
+  if (name === 'gallery') renderGalleryAdmin();
+  if (name === 'content') loadContentForm();
+  if (name === 'clients') renderClients();
+  if (name === 'payments') renderPayments();
+  if (name === 'commissions') renderCommissions();
+  if (name === 'consultants') renderConsultantsAdmin();
+  if (name === 'sales') renderSalesAdmin();
+  if (name === 'staff') renderStaff();
+  if (name === 'settings') loadSettings();
+}
+
+/* ---------- OVERVIEW ---------- */
+function renderStats() {
+  const clients = DB.get('clients', []);
+  const payments = DB.get('payments', []);
+  const commissions = DB.get('commissions', []);
+  const paid = payments.filter(p => p.status === 'Paid');
+  const revenue = paid.reduce((s, p) => s + Number(p.amount || 0), 0);
+  const commTotal = commissions.reduce((s, c) => s + Number(c.amount || 0), 0);
+
+  const cards = [
+    { label:'Clients', value: clients.length, tone:'text-brandNavy' },
+    { label:'Paid Revenue', value: money(revenue), tone:'text-green-700' },
+    { label:'Pending Payments', value: payments.filter(p => p.status !== 'Paid').length, tone:'text-brandYellow' },
+    { label:'Commission Payable', value: money(commTotal), tone:'text-brandBlue' }
+  ];
+  document.getElementById('statCards').innerHTML = cards.map(c => `
+    <div class="bg-white rounded-xl p-4">
+      <p class="text-[11px] text-gray-500 font-semibold">${c.label}</p>
+      <p class="text-lg font-extrabold ${c.tone} mt-1">${c.value}</p>
+    </div>`).join('');
+}
+
+function renderRecentClients() {
+  const list = DB.get('clients', []).slice(-5).reverse();
+  const el = document.getElementById('recentClients');
+  if (!list.length) { el.innerHTML = '<p class="text-gray-400">No subscriptions yet.</p>'; return; }
+  el.innerHTML = list.map(c => `
+    <div class="flex justify-between border-b py-1.5">
+      <div>
+        <p class="font-semibold text-brandNavy">${esc(c.name)}</p>
+        <p class="text-[11px] text-gray-500">${esc(c.estateName)} · ${esc(c.plotSize)}</p>
+      </div>
+      <div class="text-right">
+        <p class="font-semibold">${money(c.amount)}</p>
+        <p class="text-[11px] text-gray-500">${esc(c.status)}</p>
+      </div>
+    </div>`).join('');
+}
+
+/* ---------- ESTATES ADMIN ---------- */
+function renderEstateAdmin() {
+  const list = DB.get('estates', []);
+  const el = document.getElementById('estateAdminList');
+  if (!list.length) { el.innerHTML = '<p class="text-gray-400 text-[12px]">No estates yet.</p>'; return; }
+  el.innerHTML = list.map(e => `
+    <div class="border rounded-lg p-3 flex flex-wrap items-center justify-between gap-2">
+      <div class="min-w-0">
+        <p class="font-bold text-[13px] text-brandNavy">${esc(e.name)}
+          <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded ${e.type === 'easybuy' ? 'bg-brandYellow text-brandNavy' : 'bg-green-100 text-green-800'}">
+            ${e.type === 'easybuy' ? 'Easy Buy' : 'Normal'}
+          </span>
+          ${e.active === false ? '<span class="text-[10px] bg-gray-200 px-1.5 py-0.5 rounded">Hidden</span>' : ''}
+        </p>
+        <p class="text-[11px] text-gray-500">${esc(e.location)} · ${(e.plots || []).length} plot size(s)</p>
+      </div>
+      <div class="flex gap-1">
+        <button onclick="openEstateForm('${e.id}')" class="text-[11px] bg-gray-100 px-2 py-1 rounded font-bold">Edit</button>
+        <button onclick="toggleEstate('${e.id}')" class="text-[11px] bg-gray-100 px-2 py-1 rounded font-bold">${e.active === false ? 'Show' : 'Hide'}</button>
+        <button onclick="deleteEstate('${e.id}')" class="text-[11px] bg-red-100 text-red-700 px-2 py-1 rounded font-bold">Delete</button>
+      </div>
+    </div>`).join('');
+}
+
+function addPlotRow(size, outright, m6, m12) {
+  const wrap = document.getElementById('plotRows');
+  const div = document.createElement('div');
+  div.className = 'grid grid-cols-2 md:grid-cols-4 gap-2';
+  div.innerHTML = `
+    <input class="plot-size p-2 border rounded text-[12px]" placeholder="Size e.g. 300 SQM" value="${esc(size || '')}">
+    <input class="plot-out p-2 border rounded text-[12px]" type="number" placeholder="Outright" value="${outright || ''}">
+    <input class="plot-m6 p-2 border rounded text-[12px]" type="number" placeholder="0-6 months" value="${m6 || ''}">
+    <input class="plot-m12 p-2 border rounded text-[12px]" type="number" placeholder="0-12 months" value="${m12 || ''}">`;
+  wrap.appendChild(div);
+}
+
+function openEstateForm(id) {
+  document.getElementById('estateFormWrap').classList.remove('hide');
+  document.getElementById('plotRows').innerHTML = '';
+  const e = id ? DB.get('estates', []).find(x => x.id === id) : null;
+  document.getElementById('estateFormTitle').textContent = e ? 'Edit Estate' : 'New Estate';
+  document.getElementById('estId').value = e ? e.id : '';
+  document.getElementById('estName').value = e ? e.name : '';
+  document.getElementById('estType').value = e ? e.type : 'standard';
+  document.getElementById('estLoc').value = e ? e.location : '';
+  document.getElementById('estTitle').value = e ? (e.title || 'C of O') : 'C of O';
+  document.getElementById('estDesc').value = e ? (e.desc || '') : '';
+  document.getElementById('estImg').value = e ? (e.image || '') : '';
+  if (e && e.plots && e.plots.length) {
+    e.plots.forEach(p => addPlotRow(p.size, p.outright, p.m6, p.m12));
+  } else addPlotRow();
+  document.getElementById('estateFormWrap').scrollIntoView({ behavior:'smooth' });
+}
+
+function closeEstateForm() { document.getElementById('estateFormWrap').classList.add('hide'); }
+
+function saveEstate() {
+  const name = document.getElementById('estName').value.trim();
+  const loc = document.getElementById('estLoc').value.trim();
+  if (!name || !loc) { alert('Estate name and location are required.'); return; }
+
+  const plots = [];
+  document.querySelectorAll('#plotRows > div').forEach(row => {
+    const size = row.querySelector('.plot-size').value.trim();
+    const out = Number(row.querySelector('.plot-out').value || 0);
+    if (!size) return;
+    plots.push({
+      size,
+      outright: out,
+      m6: Number(row.querySelector('.plot-m6').value || 0),
+      m12: Number(row.querySelector('.plot-m12').value || 0)
+    });
+  });
+  if (!plots.length) { alert('Add at least one plot size with a price.'); return; }
+
+  const id = document.getElementById('estId').value;
+  const payload = {
+    name, type: document.getElementById('estType').value, location: loc,
+    title: document.getElementById('estTitle').value.trim() || 'C of O',
+    desc: document.getElementById('estDesc').value.trim(),
+    image: document.getElementById('estImg').value.trim(),
+    plots, active: true
+  };
+
+  const list = DB.get('estates', []);
+  if (id) {
+    const i = list.findIndex(x => x.id === id);
+    payload.active = list[i].active;
+    list[i] = Object.assign({}, list[i], payload);
+  } else {
+    payload.id = uid('e_');
+    list.push(payload);
+  }
+  DB.set('estates', list);
+  closeEstateForm();
+  renderEstateAdmin();
+  renderPublicEstates();
+}
+
+function toggleEstate(id) {
+  const list = DB.get('estates', []);
+  const e = list.find(x => x.id === id);
+  e.active = e.active === false;
+  DB.set('estates', list);
+  renderEstateAdmin();
+  renderPublicEstates();
+}
+
+function deleteEstate(id) {
+  if (!confirm('Delete this estate? Existing client records are kept.')) return;
+  DB.set('estates', DB.get('estates', []).filter(e => e.id !== id));
+  renderEstateAdmin();
+  renderPublicEstates();
+}
+
+/* ---------- GALLERY ADMIN ---------- */
+function renderGalleryAdmin() {
+  const items = DB.get('gallery', []);
+  const el = document.getElementById('galleryAdminList');
+  if (!items.length) { el.innerHTML = '<p class="text-gray-400 text-[12px]">No media yet.</p>'; return; }
+  el.innerHTML = items.map(g => `
+    <div class="flex items-center gap-3 border rounded-lg p-2">
+      <div class="w-12 h-12 bg-gray-100 rounded overflow-hidden shrink-0">
+        ${g.type === 'video'
+          ? '<div class="w-full h-full flex items-center justify-center text-gray-400"><i class="fa-solid fa-video"></i></div>'
+          : `<img src="${esc(g.url)}" class="w-full h-full object-cover">`}
+      </div>
+      <div class="min-w-0 flex-grow">
+        <p class="text-[12px] font-semibold">${esc(g.caption || 'Untitled')}</p>
+        <p class="text-[10px] text-gray-500 truncate">${esc(g.url)}</p>
+      </div>
+      <button onclick="deleteGallery('${g.id}')" class="text-[11px] bg-red-100 text-red-700 px-2 py-1 rounded font-bold shrink-0">Delete</button>
+    </div>`).join('');
+}
+
+function addGallery() {
+  const url = document.getElementById('galUrl').value.trim();
+  if (!url) { alert('Enter a media URL.'); return; }
+  const list = DB.get('gallery', []);
+  list.push({
+    id: uid('g_'),
+    type: document.getElementById('galType').value,
+    url,
+    caption: document.getElementById('galCaption').value.trim()
+  });
+  DB.set('gallery', list);
+  document.getElementById('galUrl').value = '';
+  document.getElementById('galCaption').value = '';
+  renderGalleryAdmin();
+  renderPublicGallery();
+}
+
+const GALLERY_LIMITS = { image: 8000000, video: 30000000 };
+const EXT_MIME = { jpg:'image/jpeg', jpeg:'image/jpeg', png:'image/png', gif:'image/gif', webp:'image/webp', avif:'image/avif',
+                   mp4:'video/mp4', webm:'video/webm', ogv:'video/ogg', mov:'video/quicktime' };
+const GALLERY_TYPES = {
+  image: ['image/jpeg','image/png','image/gif','image/webp','image/avif'],
+  video: ['video/mp4','video/webm','video/ogg','video/quicktime']
+};
+const GALLERY_EXT = { jpg:'image', jpeg:'image', png:'image', gif:'image', webp:'image', avif:'image',
+                      mp4:'video', webm:'video', ogv:'video', mov:'video' };
+
+/* Shared ingestion pipeline: used by both "Upload from device" and "Browse Local Files". */
+function galleryKind(file) {
+  if (GALLERY_TYPES.image.includes(file.type)) return 'image';
+  if (GALLERY_TYPES.video.includes(file.type)) return 'video';
+  const ext = (file.name.split('.').pop() || '').toLowerCase();
+  return GALLERY_EXT[ext] || null;
+}
+function ingestGalleryFile(file) {
+  return new Promise((resolve, reject) => {
+    const kind = galleryKind(file);
+    if (!kind) return reject(new Error(file.name + ': unsupported format.'));
+    if (file.size > GALLERY_LIMITS[kind]) {
+      return reject(new Error(file.name + ': too large (max ' + (GALLERY_LIMITS[kind] / 1000000) + ' MB for ' + kind + 's).'));
+    }
+    const ext = (file.name.split('.').pop() || '').toLowerCase();
+    const mime = file.type || EXT_MIME[ext];
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error(file.name + ': could not be read.'));
+    reader.onload = async ev => {
+      try {
+        const data = String(ev.target.result).replace(/^data:[^;,]*/, 'data:' + mime);
+        const up = await api('POST', '/api/admin/upload', { data }, 'admin');   // saved on the server
+        const list = DB.get('gallery', []);
+        list.push({ id: uid('g_'), type: up.type, url: up.url, caption: file.name.replace(/\.[^.]+$/, '') });
+        DB.set('gallery', list);
+        resolve(kind);
+      } catch (e) { reject(new Error(file.name + ': ' + e.message)); }
+    };
+    reader.readAsDataURL(file);
+  });
+}
+async function processGalleryFiles(files) {
+  let added = 0; const errors = [];
+  for (const f of files) {
+    try { await ingestGalleryFile(f); added++; } catch (e) { errors.push(e.message); }
+  }
+  renderGalleryAdmin();
+  renderPublicGallery();
+  let msg = '';
+  if (added) msg += added + ' file' + (added === 1 ? '' : 's') + ' uploaded to the gallery.';
+  if (errors.length) msg += (msg ? '\n\n' : '') + 'Skipped:\n' + errors.join('\n');
+  if (msg) alert(msg);
+}
+function uploadGalleryFile(input) {
+  const files = Array.from(input.files || []);
+  input.value = '';
+  if (files.length) processGalleryFiles(files);
+}
+function browseGalleryFiles(input) {
+  const files = Array.from(input.files || []);
+  input.value = '';
+  if (files.length) processGalleryFiles(files);
+}
+
+function deleteGallery(id) {
+  if (!confirm('Remove this media item?')) return;
+  DB.set('gallery', DB.get('gallery', []).filter(g => g.id !== id));
+  renderGalleryAdmin();
+  renderPublicGallery();
+}
+
+/* ---------- CONTENT ---------- */
+function loadContentForm() {
+  const c = DB.get('content', {});
+  document.getElementById('cAbout').value = c.about || '';
+  document.getElementById('cAddress').value = c.address || '';
+  document.getElementById('cBranches').value = c.branches || '';
+  document.getElementById('cEmail').value = c.email || '';
+  document.getElementById('cWeb').value = c.website || '';
+  document.getElementById('cPhones').value = c.phones || '';
+  renderFaqAdmin();
+}
+
+function renderFaqAdmin() {
+  const faqs = (DB.get('content', {}).faqs) || [];
+  document.getElementById('faqAdminList').innerHTML = faqs.map((f, i) => `
+    <div class="border rounded-lg p-2 space-y-1">
+      <input class="faq-q w-full p-1.5 border rounded text-[12px]" value="${esc(f.q)}" placeholder="Question">
+      <textarea class="faq-a w-full p-1.5 border rounded text-[12px]" rows="2" placeholder="Answer">${esc(f.a)}</textarea>
+      <button onclick="removeFaq(${i})" class="text-[11px] bg-red-100 text-red-700 px-2 py-1 rounded font-bold">Remove</button>
+    </div>`).join('');
+}
+
+function addFaq() {
+  collectFaq();
+  const c = DB.get('content', {});
+  c.faqs = c.faqs || [];
+  c.faqs.push({ q:'', a:'' });
+  DB.set('content', c);
+  renderFaqAdmin();
+}
+
+function removeFaq(i) {
+  collectFaq();
+  const c = DB.get('content', {});
+  c.faqs.splice(i, 1);
+  DB.set('content', c);
+  renderFaqAdmin();
+}
+
+function collectFaq() {
+  const c = DB.get('content', {});
+  const rows = document.querySelectorAll('#faqAdminList > div');
+  c.faqs = Array.from(rows).map(r => ({
+    q: r.querySelector('.faq-q').value.trim(),
+    a: r.querySelector('.faq-a').value.trim()
+  }));
+  DB.set('content', c);
+}
+
+function saveAbout() {
+  const c = DB.get('content', {});
+  c.about = document.getElementById('cAbout').value;
+  DB.set('content', c);
+  renderPublicContent();
+  alert('About Us updated.');
+}
+
+function saveContact() {
+  const c = DB.get('content', {});
+  c.address = document.getElementById('cAddress').value;
+  c.branches = document.getElementById('cBranches').value;
+  c.email = document.getElementById('cEmail').value.trim();
+  c.website = document.getElementById('cWeb').value.trim();
+  c.phones = document.getElementById('cPhones').value;
+  DB.set('content', c);
+  renderPublicContent();
+  alert('Contact information updated.');
+}
+
+function saveFaq() {
+  collectFaq();
+  renderPublicContent();
+  alert('FAQs updated.');
+}
+
+/* ---------- CLIENTS ---------- */
+function renderClients() {
+  const list = DB.get('clients', []).slice().reverse();
+  const el = document.getElementById('clientList');
+  if (!list.length) { el.innerHTML = '<p class="text-gray-400">No client accounts yet.</p>'; return; }
+  el.innerHTML = `
+    <table class="w-full min-w-[760px]">
+      <thead class="bg-brandNavy text-white text-[11px]">
+        <tr>
+          <th class="p-2 text-left">Client ID</th><th class="p-2 text-left">Name</th>
+          <th class="p-2 text-left">Contact</th><th class="p-2 text-left">Type</th>
+          <th class="p-2 text-left">Estate</th><th class="p-2 text-left">Amount</th>
+          <th class="p-2 text-left">Referral</th><th class="p-2 text-left">Status</th>
+        </tr>
+      </thead>
+      <tbody>${list.map(c => `
+        <tr class="border-b text-[11px]">
+          <td class="p-2 font-mono">${esc(c.clientId)}</td>
+          <td class="p-2 font-semibold">${esc(c.name)}</td>
+          <td class="p-2">${esc(c.phone)}<br><span class="text-gray-500">${esc(c.email)}</span></td>
+          <td class="p-2">${esc(c.accountType)}</td>
+          <td class="p-2">${esc(c.estateName)}<br><span class="text-gray-500">${esc(c.plotSize)}</span></td>
+          <td class="p-2 font-semibold">${money(c.amount)}</td>
+          <td class="p-2 font-mono">${esc(c.referredBy) || '—'}</td>
+          <td class="p-2">${esc(c.status)}</td>
+        </tr>`).join('')}</tbody>
+    </table>`;
+}
+
+/* ---------- PAYMENTS ---------- */
+function renderPayments() {
+  const list = DB.get('payments', []).slice().reverse();
+  const el = document.getElementById('paymentList');
+  if (!list.length) { el.innerHTML = '<p class="text-gray-400">No payments yet.</p>'; return; }
+  el.innerHTML = `
+    <table class="w-full min-w-[760px]">
+      <thead class="bg-brandNavy text-white text-[11px]">
+        <tr>
+          <th class="p-2 text-left">Receipt</th><th class="p-2 text-left">Client</th>
+          <th class="p-2 text-left">Estate</th><th class="p-2 text-left">Amount</th>
+          <th class="p-2 text-left">Method</th><th class="p-2 text-left">Status</th>
+          <th class="p-2 text-left">Action</th>
+        </tr>
+      </thead>
+      <tbody>${list.map(p => `
+        <tr class="border-b text-[11px]">
+          <td class="p-2 font-mono">${esc(p.receiptNo)}</td>
+          <td class="p-2 font-semibold">${esc(p.clientName)}</td>
+          <td class="p-2">${esc(p.estateName)}<br><span class="text-gray-500">${esc(p.plotSize)}</span></td>
+          <td class="p-2 font-semibold">${money(p.amount)}</td>
+          <td class="p-2">${esc(p.method)}</td>
+          <td class="p-2"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${p.status === 'Paid' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}">${esc(p.status)}</span></td>
+          <td class="p-2">
+            <button onclick="openReceipt('${p.id}')" class="text-[10px] bg-gray-100 px-2 py-1 rounded font-bold">Receipt</button>
+            ${p.status !== 'Paid' ? `<button onclick="markPaid('${p.id}','MANUAL-${Date.now()}','Manual')" class="text-[10px] bg-green-600 text-white px-2 py-1 rounded font-bold">Mark paid</button>` : ''}
+          </td>
+        </tr>`).join('')}</tbody>
+    </table>`;
+}
+
+/* ---------- PAYMENTS (commissions are calculated by the server) ---------- */
+async function markPaid(paymentId) {
+  try {
+    await api('POST', '/api/admin/payments/' + encodeURIComponent(paymentId) + '/mark-paid', null, 'admin');
+    await loadAdminData();
+    renderPayments();
+    renderStats();
+    alert('Payment recorded. Commission entries created.');
+  } catch (e) { alert(e.message); }
+}
+
+function renderCommissions() {
+  const list = DB.get('commissions', []).slice().reverse();
+  const el = document.getElementById('commissionList');
+  if (!list.length) {
+    el.innerHTML = '<p class="text-gray-400">No commissions yet. They are generated automatically when a payment is marked paid.</p>';
+    return;
+  }
+  const total = list.reduce((s, c) => s + c.amount, 0);
+  el.innerHTML = `
+    <table class="w-full min-w-[760px]">
+      <thead class="bg-brandNavy text-white text-[11px]">
+        <tr>
+          <th class="p-2 text-left">Date</th><th class="p-2 text-left">Receipt</th>
+          <th class="p-2 text-left">Sale</th><th class="p-2 text-left">Staff</th>
+          <th class="p-2 text-left">Level</th><th class="p-2 text-left">Rate</th>
+          <th class="p-2 text-left">Commission</th>
+        </tr>
+      </thead>
+      <tbody>${list.map(c => `
+        <tr class="border-b text-[11px]">
+          <td class="p-2 text-gray-500">${new Date(c.date).toLocaleDateString('en-GB')}</td>
+          <td class="p-2 font-mono">${esc(c.receiptNo)}</td>
+          <td class="p-2">${esc(c.clientName)}<br><span class="text-gray-500">${esc(c.estateName)}</span></td>
+          <td class="p-2 font-semibold">${esc(c.staffName)}<br><span class="text-gray-500 font-mono">${esc(c.staffRef)}</span></td>
+          <td class="p-2">${esc(c.level)}</td>
+          <td class="p-2">${c.rate}%</td>
+          <td class="p-2 font-bold">${money(c.amount)}</td>
+        </tr>`).join('')}</tbody>
+      <tfoot><tr class="bg-gray-50 font-bold text-[12px]">
+        <td class="p-2" colspan="6">Total commission payable</td>
+        <td class="p-2">${money(total)}</td>
+      </tr></tfoot>
+    </table>`;
+}
+
+/* ---------- STAFF ---------- */
+function clearStaffForm() {
+  ['stId','stName','stRole','stDept','stPhone','stEmail','stRef','stUpline']
+    .forEach(id => document.getElementById(id).value = '');
+}
+
+function saveStaff() {
+  const name = document.getElementById('stName').value.trim();
+  const role = document.getElementById('stRole').value.trim();
+  if (!name || !role) { alert('Name and role are required.'); return; }
+
+  let ref = document.getElementById('stRef').value.trim().toUpperCase();
+  if (!ref) {
+    ref = 'CIRP-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+  }
+  const list = DB.get('staff', []);
+  if (list.some(s => s.ref === ref && s.id !== document.getElementById('stId').value)) {
+    alert('That referral code is already in use. Choose another.');
+    return;
+  }
+
+  const id = document.getElementById('stId').value;
+  const payload = {
+    name, role,
+    dept: document.getElementById('stDept').value.trim(),
+    phone: document.getElementById('stPhone').value.trim(),
+    email: document.getElementById('stEmail').value.trim(),
+    ref,
+    upline: document.getElementById('stUpline').value.trim().toUpperCase(),
+    joined: new Date().toISOString()
+  };
+
+  if (id) {
+    const i = list.findIndex(s => s.id === id);
+    payload.joined = list[i].joined;
+    list[i] = Object.assign({}, list[i], payload);
+  } else {
+    payload.id = uid('s_');
+    list.push(payload);
+  }
+  DB.set('staff', list);
+  clearStaffForm();
+  renderStaff();
+  alert('Staff profile saved. Referral code: ' + ref);
+}
+
+function renderStaff() {
+  const list = DB.get('staff', []).slice().reverse();
+  const el = document.getElementById('staffList');
+  if (!list.length) { el.innerHTML = '<p class="text-gray-400">No staff profiles yet.</p>'; return; }
+  el.innerHTML = `
+    <table class="w-full min-w-[680px]">
+      <thead class="bg-brandNavy text-white text-[11px]">
+        <tr>
+          <th class="p-2 text-left">Name</th><th class="p-2 text-left">Role</th>
+          <th class="p-2 text-left">Contact</th><th class="p-2 text-left">Referral</th>
+          <th class="p-2 text-left">Upline</th><th class="p-2 text-left">Action</th>
+        </tr>
+      </thead>
+      <tbody>${list.map(s => `
+        <tr class="border-b text-[11px]">
+          <td class="p-2 font-semibold">${esc(s.name)}</td>
+          <td class="p-2">${esc(s.role)}${s.dept ? `<br><span class="text-gray-500">${esc(s.dept)}</span>` : ''}</td>
+          <td class="p-2">${esc(s.phone || '')}${s.email ? `<br><span class="text-gray-500">${esc(s.email)}</span>` : ''}</td>
+          <td class="p-2 font-mono font-bold">${esc(s.ref)}</td>
+          <td class="p-2 font-mono">${esc(s.upline) || '—'}</td>
+          <td class="p-2">
+            <button onclick="editStaff('${s.id}')" class="text-[10px] bg-gray-100 px-2 py-1 rounded font-bold">Edit</button>
+            <button onclick="deleteStaff('${s.id}')" class="text-[10px] bg-red-100 text-red-700 px-2 py-1 rounded font-bold">Delete</button>
+          </td>
+        </tr>`).join('')}</tbody>
+    </table>`;
+}
+
+function editStaff(id) {
+  const s = DB.get('staff', []).find(x => x.id === id);
+  if (!s) return;
+  document.getElementById('stId').value = s.id;
+  document.getElementById('stName').value = s.name;
+  document.getElementById('stRole').value = s.role;
+  document.getElementById('stDept').value = s.dept || '';
+  document.getElementById('stPhone').value = s.phone || '';
+  document.getElementById('stEmail').value = s.email || '';
+  document.getElementById('stRef').value = s.ref || '';
+  document.getElementById('stUpline').value = s.upline || '';
+  window.scrollTo(0, 0);
+}
+
+function deleteStaff(id) {
+  if (!confirm('Delete this staff profile?')) return;
+  DB.set('staff', DB.get('staff', []).filter(s => s.id !== id));
+  renderStaff();
+}
+
+/* ---------- SETTINGS ---------- */
+function loadSettings() {
+  const s = DB.get('settings', {});
+  document.getElementById('setPaystack').value = s.paystack || '';
+  const sec = document.getElementById('setPaystackSecret');
+  sec.value = '';
+  sec.placeholder = s.hasSecret ? 'Saved — leave blank to keep the current key' : 'sk_live_... or sk_test_...';
+  document.getElementById('setPass').value = '';
+}
+
+async function saveSettings() {
+  const pass = document.getElementById('setPass').value.trim();
+  if (pass && pass.length < 8) { alert('Admin password must be at least 8 characters.'); return; }
+  const body = {
+    paystack: document.getElementById('setPaystack').value.trim(),
+    paystackSecret: document.getElementById('setPaystackSecret').value.trim()
+  };
+  if (pass) body.password = pass;
+  try {
+    await api('PUT', '/api/admin/settings', body, 'admin');
+    await loadAdminData();
+    loadSettings();
+    alert('Settings saved.' + (pass ? ' Admin password updated.' : ''));
+  } catch (e) { alert(e.message); }
+}
+
+/* ---------- EXPORT ---------- */
+function exportCSV(kind) {
+  const map = {
+    clients: DB.get('clients', []),
+    payments: DB.get('payments', []),
+    commissions: DB.get('commissions', []),
+    staff: DB.get('staff', []),
+    consultants: DB.get('consultants', []).map(c => ({
+      consultantId: c.consultantId, name: c.name, email: c.email, phone: c.phone,
+      cause: c.cause, status: c.status, referredBy: c.upline, registered: c.createdAt, activated: c.activatedAt || ''
+    })),
+    sales: DB.get('sales', []).map(s => ({
+      ref: s.ref, consultantId: s.consultantId, consultant: s.consultantName, client: s.clientName,
+      estate: s.estateName, plot: s.plotSize, amount: s.amount, status: s.status,
+      rejectionReason: s.rejectReason || '', submitted: s.createdAt, reviewed: s.reviewedAt || ''
+    }))
+  };
+  const rows = map[kind] || [];
+  if (!rows.length) { alert('No data to export.'); return; }
+  const headers = Object.keys(rows[0]);
+  let csv = headers.join(',') + '\n';
+  rows.forEach(r => {
+    csv += headers.map(h => `"${String(r[h] == null ? '' : r[h]).replace(/"/g, '""')}"`).join(',') + '\n';
+  });
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'cirpman-' + kind + '.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function exportAll() {
+  const dump = {};
+  ['estates','gallery','content','clients','payments','commissions','staff','consultants','sales','settings','counter']
+    .forEach(k => dump[k] = DB.get(k, null));
+  const blob = new Blob([JSON.stringify(dump, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'cirpman-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+async function resetDemo() {
+  const word = prompt('This permanently deletes ALL clients, payments, commissions, sales and consultant accounts from the server. Estates, gallery and website content are kept.\n\nType RESET to confirm.');
+  if (word !== 'RESET') return;
+  try {
+    await api('POST', '/api/admin/reset', { confirm: 'RESET' }, 'admin');
+    location.reload();
+  } catch (e) { alert(e.message); }
+}
+
+/* ============================================================
+   CONSULTANT PORTAL
+   Accounts, passwords and sales are stored and checked on the server.
+============================================================ */
+let csPoll = null;
+const fmtDate = iso => iso ? new Date(iso).toLocaleDateString('en-GB') : '—';
+
+
+function normPhone(s) {
+  let d = String(s || '').replace(/\D/g, '');
+  if (d.startsWith('234')) d = '0' + d.slice(3);
+  return d;
+}
+
+
+function readFileAsDataURL(file) {
+  return new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result); r.onerror = () => rej(new Error('Could not read file'));
+    r.readAsDataURL(file);
+  });
+}
+async function compressImage(file, maxDim, quality) {
+  const url = await readFileAsDataURL(file);
+  return new Promise((res, rej) => {
+    const img = new Image();
+    img.onload = () => {
+      const k = Math.min(1, maxDim / Math.max(img.width, img.height));
+      const cv = document.createElement('canvas');
+      cv.width = Math.round(img.width * k); cv.height = Math.round(img.height * k);
+      cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height);
+      res(cv.toDataURL('image/jpeg', quality));
+    };
+    img.onerror = () => rej(new Error('Not a valid image'));
+    img.src = url;
+  });
+}
+async function readReceipt(file) {
+  if (file.type === 'application/pdf') {
+    if (file.size > 1200000) throw new Error('PDF is too large (max 1.2 MB). Upload an image or a smaller PDF.');
+    return { data: await readFileAsDataURL(file), type: 'pdf' };
+  }
+  if (!file.type.startsWith('image/')) throw new Error('Receipt must be an image or a PDF.');
+  return { data: await compressImage(file, 1400, 0.75), type: 'image' };
+}
+
+function csNotice(msg, kind) {
+  const el = document.getElementById('csMsg');
+  if (!msg) { el.classList.add('hide'); return; }
+  el.className = 'text-[12px] p-2.5 rounded mb-3 border ' + (kind === 'ok'
+    ? 'bg-green-50 border-green-200 text-green-800' : 'bg-red-50 border-red-200 text-red-700');
+  el.textContent = msg;
+}
+function csPane(name) {
+  ['Login', 'Register', 'Forgot'].forEach(n =>
+    document.getElementById('csPane' + n).classList.toggle('hide', n.toLowerCase() !== name));
+  csNotice('');
+}
+function currentConsultant() { return DB.get('csMe', null); }
+async function loadConsultantData() {
+  const d = await api('GET', '/api/consultant/me', null, 'cs');
+  CACHE.csMe = d.consultant; CACHE.csSales = d.sales; CACHE.csCommissions = d.commissions;
+}
+function startCsPolling() {
+  stopCsPolling();
+  // Re-checks the account every 30 s, so a deactivation reaches an idle dashboard quickly.
+  csPoll = setInterval(() => { loadConsultantData().then(renderConsultantDash).catch(() => {}); }, 30000);
+}
+function stopCsPolling() { if (csPoll) { clearInterval(csPoll); csPoll = null; } }
+function csSessionEnded(code) {
+  sessionStorage.removeItem(TOK.cs);
+  CACHE.csMe = null; CACHE.csSales = []; CACHE.csCommissions = [];
+  stopCsPolling();
+  document.getElementById('csDash').classList.add('hide');
+  document.getElementById('csAuth').classList.remove('hide');
+  csPane('login');
+  csNotice(code === 'INACTIVE'
+    ? 'Your consultant account has been deactivated. Please contact the Admin.'
+    : 'Your session has expired. Please log in again.');
+}
+function isAdminSession() { return !!sessionStorage.getItem(TOK.admin); }
+async function showConsultant(pane) {
+  document.getElementById('consultantOverlay').classList.remove('hide');
+  window.scrollTo(0, 0);
+  if (sessionStorage.getItem(TOK.cs)) {
+    try {
+      if (!currentConsultant()) await loadConsultantData();
+      openConsultantDash();
+      return;
+    } catch (e) { /* expired / deactivated: the login form is shown below */ }
+  }
+  document.getElementById('csDash').classList.add('hide');
+  document.getElementById('csAuth').classList.remove('hide');
+  csPane(pane || 'login');
+}
+
+function hideConsultant() { document.getElementById('consultantOverlay').classList.add('hide'); }
+
+function csPreviewPassport(input) {
+  const img = document.getElementById('rgPassportPrev');
+  const f = input.files[0];
+  if (!f) { img.classList.add('hide'); return; }
+  const r = new FileReader();
+  r.onload = () => { img.src = r.result; img.classList.remove('hide'); };
+  r.readAsDataURL(f);
+}
+
+async function csRegister(ev) {
+  ev.preventDefault();
+  csNotice('');
+  const name = document.getElementById('rgName').value.trim();
+  const email = document.getElementById('rgEmail').value.trim().toLowerCase();
+  const phone = document.getElementById('rgPhone').value.trim();
+  const pass = document.getElementById('rgPass').value;
+  const cause = document.getElementById('rgCause').value.trim();
+  const upline = document.getElementById('rgUpline').value.trim().toUpperCase();
+  const file = document.getElementById('rgPassport').files[0];
+
+  if (pass.length < 6) { csNotice('Password must be at least 6 characters.'); return false; }
+  if (pass !== document.getElementById('rgPass2').value) { csNotice('Passwords do not match.'); return false; }
+  if (normPhone(phone).length < 10) { csNotice('Enter a valid phone number.'); return false; }
+  if (!file) { csNotice('Please upload your passport photograph.'); return false; }
+  if (!file.type.startsWith('image/')) { csNotice('Passport must be an image file.'); return false; }
+  if (!cause) { csNotice('Please state your cause of registration.'); return false; }
+
+  let passport;
+  try { passport = await compressImage(file, 400, 0.8); }
+  catch (e) { csNotice(e.message); return false; }
+
+  try {
+    await api('POST', '/api/consultant/register', { name, email, phone, password: pass, cause, upline, passport });
+  } catch (e) { csNotice(e.message); return false; }
+
+  document.getElementById('csPaneRegister').reset();
+  document.getElementById('rgPassportPrev').classList.add('hide');
+  csPane('login');
+  csNotice('Registration received. You can log in once the Admin assigns your Consultant ID and activates your account.', 'ok');
+  return false;
+}
+
+async function csLogin() {
+  const u = document.getElementById('csLoginUser').value;
+  const p = document.getElementById('csLoginPass').value;
+  try {
+    const r = await api('POST', '/api/consultant/login', { username: u, password: p });
+    sessionStorage.setItem(TOK.cs, r.token);
+    document.getElementById('csLoginPass').value = '';
+    csNotice('');
+    await loadConsultantData();
+    openConsultantDash();
+  } catch (e) { csNotice(e.message); }
+}
+function csLogout() {
+  sessionStorage.removeItem(TOK.cs);
+  CACHE.csMe = null; CACHE.csSales = []; CACHE.csCommissions = [];
+  stopCsPolling();
+  document.getElementById('csDash').classList.add('hide');
+  document.getElementById('csAuth').classList.remove('hide');
+  csPane('login');
+}
+
+async function csResetPassword() {
+  const email = document.getElementById('fpEmail').value;
+  const phone = document.getElementById('fpPhone').value;
+  const p1 = document.getElementById('fpPass').value, p2 = document.getElementById('fpPass2').value;
+  if (p1.length < 6) { csNotice('New password must be at least 6 characters.'); return; }
+  if (p1 !== p2) { csNotice('Passwords do not match.'); return; }
+  try {
+    await api('POST', '/api/consultant/reset-password', { email, phone, password: p1 });
+  } catch (e) { csNotice(e.message); return; }
+  ['fpEmail', 'fpPhone', 'fpPass', 'fpPass2'].forEach(id => document.getElementById(id).value = '');
+  csPane('login');
+  csNotice('Password reset successful. Please log in with your new password.', 'ok');
+}
+
+/* ---------- Dashboard ---------- */
+function statusBadge(s) {
+  const cls = s === 'Approved' ? 'bg-green-100 text-green-800'
+            : s === 'Rejected' ? 'bg-red-100 text-red-700'
+            : 'bg-yellow-100 text-yellow-800';
+  return `<span class="px-2 py-0.5 rounded-full font-bold text-[10px] ${cls}">${esc(s)}</span>`;
+}
+
+function openConsultantDash() {
+  const c = currentConsultant();
+  if (!c) return;
+  document.getElementById('csAuth').classList.add('hide');
+  document.getElementById('csDash').classList.remove('hide');
+  document.getElementById('csPhoto').src = c.passport;
+  document.getElementById('csName').textContent = c.name;
+  document.getElementById('csIdLabel').textContent = c.consultantId;
+  csFillEstates();
+  renderConsultantDash();
+  startCsPolling();
+}
+
+function csFillEstates() {
+  const sel = document.getElementById('slEstate');
+  const keep = sel.value;
+  const estates = DB.get('estates', []).filter(e => e.active !== false);
+  sel.innerHTML = '<option value="">Select estate...</option>' +
+    estates.map(e => `<option value="${esc(e.id)}">${esc(e.name)}</option>`).join('');
+  sel.value = keep;
+  csFillPlots();
+}
+function csFillPlots() {
+  const e = DB.get('estates', []).find(x => x.id === document.getElementById('slEstate').value);
+  document.getElementById('slPlot').innerHTML = '<option value="">Select plot size...</option>' +
+    (e ? e.plots.map(p => `<option value="${esc(p.size)}">${esc(p.size)}</option>`).join('') : '');
+}
+
+function renderConsultantDash() {
+  const c = currentConsultant();
+  if (!c) return;
+  const sales = DB.get('csSales', []).slice().reverse();
+  const comms = DB.get('csCommissions', []).slice().reverse();
+  const count = st => sales.filter(s => s.status === st).length;
+  const earned = comms.reduce((t, x) => t + x.amount, 0);
+
+  const card = (label, val, color) => `<div class="bg-white rounded-xl p-3 text-center">
+    <p class="text-[10px] font-bold uppercase text-gray-500">${label}</p>
+    <p class="text-lg font-extrabold ${color}">${val}</p></div>`;
+  document.getElementById('csStats').innerHTML =
+    card('Total Sales', sales.length, 'text-brandNavy') +
+    card('Pending', count('Pending'), 'text-yellow-600') +
+    card('Approved', count('Approved'), 'text-green-600') +
+    card('Rejected', count('Rejected'), 'text-red-600') +
+    card('Commission Earned', money(earned), 'text-brandBlue');
+
+  const sEl = document.getElementById('csSales');
+  sEl.innerHTML = !sales.length ? '<p class="text-gray-400">No sales submitted yet.</p>' : `
+    <table class="w-full min-w-[640px]">
+      <thead class="bg-brandNavy text-white text-[11px]"><tr>
+        <th class="p-2 text-left">Ref</th><th class="p-2 text-left">Date</th><th class="p-2 text-left">Client</th>
+        <th class="p-2 text-left">Estate</th><th class="p-2 text-left">Amount</th>
+        <th class="p-2 text-left">Receipt</th><th class="p-2 text-left">Status</th></tr></thead>
+      <tbody>${sales.map(s => `
+        <tr class="border-b text-[11px] align-top">
+          <td class="p-2 font-mono">${esc(s.ref)}</td>
+          <td class="p-2">${fmtDate(s.createdAt)}</td>
+          <td class="p-2 font-semibold">${esc(s.clientName)}</td>
+          <td class="p-2">${esc(s.estateName)}<br><span class="text-gray-500">${esc(s.plotSize)}</span></td>
+          <td class="p-2 font-semibold">${money(s.amount)}</td>
+          <td class="p-2"><button onclick="openSaleReceipt('${s.id}')" class="text-brandBlue font-bold underline">View</button></td>
+          <td class="p-2">${statusBadge(s.status)}
+            ${s.status === 'Rejected' ? `<p class="text-red-700 mt-1 max-w-[220px]"><strong>Reason:</strong> ${esc(s.rejectReason)}</p>
+              <label class="inline-block mt-1 bg-brandBlue text-white font-bold px-2 py-1 rounded cursor-pointer">Re-upload receipt
+                <input type="file" accept="image/*,application/pdf" class="hidden" onchange="csResubmit('${s.id}', this)"></label>` : ''}
+            ${s.status === 'Approved' ? `<p class="text-gray-500 mt-1">Approved ${fmtDate(s.reviewedAt)}</p>` : ''}
+          </td>
+        </tr>`).join('')}</tbody>
+    </table>`;
+
+  const cEl = document.getElementById('csCommissions');
+  cEl.innerHTML = !comms.length ? '<p class="text-gray-400">No commissions yet. They appear once the Admin approves a receipt.</p>' : `
+    <table class="w-full min-w-[560px]">
+      <thead class="bg-brandNavy text-white text-[11px]"><tr>
+        <th class="p-2 text-left">Date</th><th class="p-2 text-left">Sale Ref</th><th class="p-2 text-left">Client / Estate</th>
+        <th class="p-2 text-left">Level</th><th class="p-2 text-left">Rate</th><th class="p-2 text-left">Commission</th></tr></thead>
+      <tbody>${comms.map(x => `
+        <tr class="border-b text-[11px]">
+          <td class="p-2">${fmtDate(x.date)}</td><td class="p-2 font-mono">${esc(x.receiptNo)}</td>
+          <td class="p-2">${esc(x.clientName)}<br><span class="text-gray-500">${esc(x.estateName)}</span></td>
+          <td class="p-2">${esc(x.level)}</td><td class="p-2">${x.rate}%</td>
+          <td class="p-2 font-bold">${money(x.amount)}</td>
+        </tr>`).join('')}</tbody>
+      <tfoot><tr class="bg-gray-50 font-bold"><td class="p-2" colspan="5">Total</td><td class="p-2">${money(earned)}</td></tr></tfoot>
+    </table>`;
+}
+
+async function csSubmitSale(ev) {
+  ev.preventDefault();
+  const form = ev.target;
+  const c = currentConsultant();
+  if (!c) { alert('Session expired. Please log in again.'); return false; }
+  const estate = DB.get('estates', []).find(e => e.id === document.getElementById('slEstate').value);
+  const plotSize = document.getElementById('slPlot').value;
+  const amount = Number(document.getElementById('slAmount').value);
+  const file = document.getElementById('slReceipt').files[0];
+  if (!estate || !plotSize) { alert('Select an estate and plot size.'); return false; }
+  if (!(amount > 0)) { alert('Enter the amount paid.'); return false; }
+  if (!file) { alert('Upload the payment receipt.'); return false; }
+
+  let receipt;
+  try { receipt = await readReceipt(file); } catch (e) { alert(e.message); return false; }
+
+  try {
+    await api('POST', '/api/consultant/sales', {
+      estateId: estate.id, plotSize, amount,
+      clientName: document.getElementById('slClient').value.trim(),
+      clientPhone: document.getElementById('slPhone').value.trim(),
+      receipt: { data: receipt.data, type: receipt.type }
+    }, 'cs');
+    await loadConsultantData();
+  } catch (e) {
+    if (e.code !== 'INACTIVE' && e.code !== 'CS_AUTH') alert(e.message);
+    return false;
+  }
+  form.reset(); csFillPlots();
+  renderConsultantDash();
+  alert('Sale submitted. Status: Pending admin review.');
+  return false;
+}
+
+async function csResubmit(id, input) {
+  const file = input.files[0];
+  if (!file) return;
+  let receipt;
+  try { receipt = await readReceipt(file); } catch (e) { alert(e.message); input.value = ''; return; }
+  try {
+    await api('POST', '/api/consultant/sales/' + encodeURIComponent(id) + '/resubmit',
+      { receipt: { data: receipt.data, type: receipt.type } }, 'cs');
+    await loadConsultantData();
+  } catch (e) {
+    if (e.code !== 'INACTIVE' && e.code !== 'CS_AUTH') alert(e.message);
+    return;
+  }
+  renderConsultantDash();
+}
+
+/* ---------- Document viewer ---------- */
+function openDoc(title, data, type) {
+  document.getElementById('docTitle').textContent = title;
+  document.getElementById('docBody').innerHTML = type === 'pdf'
+    ? `<iframe src="${esc(data)}" class="w-full h-[70vh] border rounded"></iframe>
+       <a href="${esc(data)}" download="receipt.pdf" class="inline-block mt-2 text-[12px] text-brandBlue font-bold underline">Download PDF</a>`
+    : `<img src="${esc(data)}" class="max-w-full max-h-[75vh] mx-auto rounded border" alt="${esc(title)}">`;
+  document.getElementById('docModal').classList.remove('hide');
+}
+function closeDoc() { document.getElementById('docModal').classList.add('hide'); }
+function openSaleReceipt(id) {
+  const s = DB.get('sales', []).find(x => x.id === id);
+  if (s) openDoc('Payment receipt — ' + s.ref, s.receipt, s.receiptType);
+}
+function openPassport(id) {
+  const c = DB.get('consultants', []).find(x => x.id === id);
+  if (c) openDoc('Passport — ' + c.name, c.passport, 'image');
+}
+
+/* ---------- ADMIN: consultants ---------- */
+function updateAdminBadges() {
+  const pc = DB.get('consultants', []).filter(c => !c.consultantId).length;
+  const ps = DB.get('sales', []).filter(s => s.status === 'Pending').length;
+  [['badgeCons', pc], ['badgeSales', ps]].forEach(([id, n]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = n; el.classList.toggle('hide', !n);
+  });
+}
+
+function renderConsultantsAdmin() {
+  const list = DB.get('consultants', []).slice().reverse();
+  const el = document.getElementById('consultantAdminList');
+  if (!list.length) { el.innerHTML = '<p class="text-gray-400">No consultant registrations yet.</p>'; return; }
+  el.innerHTML = `
+    <table class="w-full min-w-[820px]">
+      <thead class="bg-brandNavy text-white text-[11px]"><tr>
+        <th class="p-2 text-left">Photo</th><th class="p-2 text-left">Name</th><th class="p-2 text-left">Contact</th>
+        <th class="p-2 text-left">Cause of Registration</th><th class="p-2 text-left">Registered</th>
+        <th class="p-2 text-left">Consultant ID</th><th class="p-2 text-left">Status</th><th class="p-2 text-left">Action</th></tr></thead>
+      <tbody>${list.map(c => `
+        <tr class="border-b text-[11px] align-top">
+          <td class="p-2"><img src="${esc(c.passport)}" onclick="openPassport('${c.id}')" class="w-10 h-10 rounded object-cover cursor-pointer border" alt=""></td>
+          <td class="p-2 font-semibold">${esc(c.name)}${c.upline ? `<br><span class="text-gray-500 font-normal">Ref: ${esc(c.upline)}</span>` : ''}</td>
+          <td class="p-2">${esc(c.phone)}<br><span class="text-gray-500">${esc(c.email)}</span></td>
+          <td class="p-2 max-w-[260px]">${esc(c.cause)}</td>
+          <td class="p-2">${fmtDate(c.createdAt)}</td>
+          <td class="p-2 font-mono font-bold">${esc(c.consultantId) || '—'}</td>
+          <td class="p-2">${!c.consultantId
+            ? '<span class="px-2 py-0.5 rounded-full font-bold text-[10px] bg-yellow-100 text-yellow-800">Pending Activation</span>'
+            : c.status === 'Inactive'
+              ? '<span class="px-2 py-0.5 rounded-full font-bold text-[10px] bg-gray-200 text-gray-700">Inactive</span>'
+              : '<span class="px-2 py-0.5 rounded-full font-bold text-[10px] bg-green-100 text-green-800">Active</span>'}</td>
+          <td class="p-2">${!c.consultantId
+            ? `<button onclick="generateConsultantId('${c.id}')" class="text-[10px] bg-brandBlue text-white px-2 py-1 rounded font-bold whitespace-nowrap">Generate ID &amp; Activate</button>`
+            : c.status === 'Inactive'
+              ? `<button onclick="reactivateConsultant('${c.id}')" class="text-[10px] bg-green-600 text-white px-2 py-1 rounded font-bold whitespace-nowrap">Reactivate</button>`
+              : `<button onclick="deactivateConsultant('${c.id}')" class="text-[10px] bg-red-600 text-white px-2 py-1 rounded font-bold whitespace-nowrap"><i class="fa-solid fa-user-slash mr-1"></i>Deactivate Consultant</button>`}</td>
+        </tr>`).join('')}</tbody>
+    </table>`;
+}
+
+async function deactivateConsultant(id) {
+  const c = DB.get('consultants', []).find(x => x.id === id);
+  if (!c || !c.consultantId || c.status === 'Inactive') return;
+  if (!confirm('Deactivate ' + c.name + ' (' + c.consultantId + ')?\n\nThey will be logged out immediately and will not be able to log in or submit sales until reactivated.')) return;
+  try {
+    await api('POST', '/api/admin/consultants/' + encodeURIComponent(id) + '/deactivate', null, 'admin');
+    await loadAdminData();
+    renderConsultantsAdmin(); updateAdminBadges();
+    alert(c.name + ' has been deactivated.');
+  } catch (e) { alert(e.message); }
+}
+async function reactivateConsultant(id) {
+  const c = DB.get('consultants', []).find(x => x.id === id);
+  if (!c || c.status !== 'Inactive') return;
+  if (!confirm('Reactivate ' + c.name + ' (' + c.consultantId + ')?')) return;
+  try {
+    await api('POST', '/api/admin/consultants/' + encodeURIComponent(id) + '/reactivate', null, 'admin');
+    await loadAdminData();
+    renderConsultantsAdmin(); updateAdminBadges();
+  } catch (e) { alert(e.message); }
+}
+
+async function generateConsultantId(id) {
+  const c = DB.get('consultants', []).find(x => x.id === id);
+  if (!c || c.consultantId) return;
+  if (!confirm('Generate a Consultant ID for ' + c.name + ' and activate the account?')) return;
+  try {
+    const r = await api('POST', '/api/admin/consultants/' + encodeURIComponent(id) + '/activate', null, 'admin');
+    await loadAdminData();
+    renderConsultantsAdmin(); updateAdminBadges();
+    alert('Consultant ID assigned: ' + r.consultantId + '\nThe account is now active.');
+  } catch (e) { alert(e.message); }
+}
+
+/* ---------- ADMIN: sales review ---------- */
+function renderSalesAdmin() {
+  const f = document.getElementById('salesFilter').value;
+  const list = DB.get('sales', []).filter(s => !f || s.status === f).slice().reverse();
+  const el = document.getElementById('salesAdminList');
+  if (!list.length) { el.innerHTML = '<p class="text-gray-400">No sales to show.</p>'; return; }
+  el.innerHTML = `
+    <table class="w-full min-w-[860px]">
+      <thead class="bg-brandNavy text-white text-[11px]"><tr>
+        <th class="p-2 text-left">Ref</th><th class="p-2 text-left">Date</th><th class="p-2 text-left">Consultant</th>
+        <th class="p-2 text-left">Client</th><th class="p-2 text-left">Estate</th><th class="p-2 text-left">Amount</th>
+        <th class="p-2 text-left">Receipt</th><th class="p-2 text-left">Status</th><th class="p-2 text-left">Action</th></tr></thead>
+      <tbody>${list.map(s => `
+        <tr class="border-b text-[11px] align-top">
+          <td class="p-2 font-mono">${esc(s.ref)}</td>
+          <td class="p-2">${fmtDate(s.createdAt)}</td>
+          <td class="p-2 font-semibold">${esc(s.consultantName)}<br><span class="font-mono font-normal text-gray-500">${esc(s.consultantId)}</span></td>
+          <td class="p-2">${esc(s.clientName)}${s.clientPhone ? `<br><span class="text-gray-500">${esc(s.clientPhone)}</span>` : ''}</td>
+          <td class="p-2">${esc(s.estateName)}<br><span class="text-gray-500">${esc(s.plotSize)}</span></td>
+          <td class="p-2 font-semibold">${money(s.amount)}</td>
+          <td class="p-2"><button onclick="openSaleReceipt('${s.id}')" class="text-brandBlue font-bold underline">View</button></td>
+          <td class="p-2">${statusBadge(s.status)}${s.status === 'Rejected' ? `<p class="text-red-700 mt-1 max-w-[180px]">${esc(s.rejectReason)}</p>` : ''}</td>
+          <td class="p-2 whitespace-nowrap">${s.status === 'Pending' ? `
+            <button onclick="approveSale('${s.id}')" class="text-[10px] bg-green-600 text-white px-2 py-1 rounded font-bold">Approve</button>
+            <button onclick="openReject('${s.id}')" class="text-[10px] bg-red-100 text-red-700 px-2 py-1 rounded font-bold">Reject</button>` : ''}</td>
+        </tr>`).join('')}</tbody>
+    </table>`;
+}
+
+
+
+async function approveSale(id) {
+  const s = DB.get('sales', []).find(x => x.id === id);
+  if (!s || s.status !== 'Pending') return;
+  if (!confirm('Approve this receipt for ' + money(s.amount) + '? Commissions will be released to all beneficiaries.')) return;
+  try {
+    const r = await api('POST', '/api/admin/sales/' + encodeURIComponent(id) + '/approve', null, 'admin');
+    await loadAdminData();
+    renderSalesAdmin(); updateAdminBadges();
+    alert('Receipt approved. ' + r.entries + ' commission entr' + (r.entries === 1 ? 'y' : 'ies') + ' activated.');
+  } catch (e) { alert(e.message); }
+}
+function openReject(id) {
+  document.getElementById('rejectSaleId').value = id;
+  document.getElementById('rejectReason').value = '';
+  document.getElementById('rejectModal').classList.remove('hide');
+}
+function closeReject() { document.getElementById('rejectModal').classList.add('hide'); }
+async function confirmReject() {
+  const reason = document.getElementById('rejectReason').value.trim();
+  if (!reason) { alert('A reason is required to reject a receipt.'); return; }
+  const id = document.getElementById('rejectSaleId').value;
+  try {
+    await api('POST', '/api/admin/sales/' + encodeURIComponent(id) + '/reject', { reason }, 'admin');
+    await loadAdminData();
+    closeReject(); renderSalesAdmin(); updateAdminBadges();
+  } catch (e) { alert(e.message); }
+}
+
+/* ---------- INIT ---------- */
+(async function boot() {
+  try {
+    await loadPublic();
+  } catch (e) {
+    const g = document.getElementById('estateGrid');
+    if (g) g.innerHTML = '<p class="text-red-600 text-sm">Could not load data from the server. Please refresh the page.</p>';
+    return;
+  }
+  updateAdminBadges();
+  renderPublicEstates();
+  renderPublicGallery();
+  renderPublicContent();
+  refreshEstateOptions();
+  refreshPricePreview();
+})();
+</script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+</body>
+</html>
